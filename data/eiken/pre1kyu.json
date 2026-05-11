@@ -1,0 +1,122 @@
+[
+  {
+    "id": "pre1kyu-001",
+    "word": "ambiguous",
+    "level": ["準1級"],
+    "pos": "adjective",
+    "japanese": "曖昧な",
+    "vietnamese": "mơ hồ, không rõ ràng",
+    "example": "The instructions were ambiguous and hard to follow.",
+    "exampleJa": "説明が曖昧で従うのが難しかった。",
+    "exampleVi": "Hướng dẫn mơ hồ và khó làm theo.",
+    "source": "built-in"
+  },
+  {
+    "id": "pre1kyu-002",
+    "word": "inevitable",
+    "level": ["準1級"],
+    "pos": "adjective",
+    "japanese": "避けられない、必然の",
+    "vietnamese": "không thể tránh khỏi",
+    "example": "Change is inevitable in any organization.",
+    "exampleJa": "どんな組織でも変化は避けられません。",
+    "exampleVi": "Sự thay đổi là không thể tránh khỏi trong bất kỳ tổ chức nào.",
+    "source": "built-in"
+  },
+  {
+    "id": "pre1kyu-003",
+    "word": "advocate",
+    "level": ["準1級"],
+    "pos": "verb",
+    "japanese": "主張する、支持する",
+    "vietnamese": "ủng hộ, vận động",
+    "example": "She advocates for better healthcare policies.",
+    "exampleJa": "彼女はより良い医療政策を主張しています。",
+    "exampleVi": "Cô ấy vận động cho các chính sách chăm sóc sức khỏe tốt hơn.",
+    "source": "built-in"
+  },
+  {
+    "id": "pre1kyu-004",
+    "word": "alleviate",
+    "level": ["準1級"],
+    "pos": "verb",
+    "japanese": "軽減する、和らげる",
+    "vietnamese": "giảm nhẹ, xoa dịu",
+    "example": "This medicine should alleviate the pain.",
+    "exampleJa": "この薬は痛みを軽減するはずです。",
+    "exampleVi": "Thuốc này nên giảm nhẹ cơn đau.",
+    "source": "built-in"
+  },
+  {
+    "id": "pre1kyu-005",
+    "word": "comprehensive",
+    "level": ["準1級"],
+    "pos": "adjective",
+    "japanese": "包括的な",
+    "vietnamese": "toàn diện, bao quát",
+    "example": "The report provides a comprehensive overview.",
+    "exampleJa": "報告書は包括的な概要を提供しています。",
+    "exampleVi": "Báo cáo cung cấp một cái nhìn tổng quan toàn diện.",
+    "source": "built-in"
+  },
+  {
+    "id": "pre1kyu-006",
+    "word": "deteriorate",
+    "level": ["準1級"],
+    "pos": "verb",
+    "japanese": "悪化する",
+    "vietnamese": "xấu đi, suy giảm",
+    "example": "His health deteriorated rapidly.",
+    "exampleJa": "彼の健康状態は急速に悪化しました。",
+    "exampleVi": "Sức khỏe của anh ấy xấu đi nhanh chóng.",
+    "source": "built-in"
+  },
+  {
+    "id": "pre1kyu-007",
+    "word": "paradox",
+    "level": ["準1級"],
+    "pos": "noun",
+    "japanese": "逆説、パラドックス",
+    "vietnamese": "nghịch lý",
+    "example": "It is a paradox that the more we learn, the more we realize we do not know.",
+    "exampleJa": "学べば学ぶほど、知らないことが分かるというのは逆説です。",
+    "exampleVi": "Đây là một nghịch lý rằng chúng ta càng học nhiều, chúng ta càng nhận ra rằng mình không biết.",
+    "source": "built-in"
+  },
+  {
+    "id": "pre1kyu-008",
+    "word": "obsolete",
+    "level": ["準1級"],
+    "pos": "adjective",
+    "japanese": "時代遅れの、廃れた",
+    "vietnamese": "lỗi thời, lạc hậu",
+    "example": "That technology has become obsolete.",
+    "exampleJa": "その技術は時代遅れになりました。",
+    "exampleVi": "Công nghệ đó đã trở nên lỗi thời.",
+    "source": "built-in"
+  },
+  {
+    "id": "pre1kyu-009",
+    "word": "skeptical",
+    "level": ["準1級"],
+    "pos": "adjective",
+    "japanese": "懐疑的な",
+    "vietnamese": "hoài nghi",
+    "example": "I am skeptical about these claims.",
+    "exampleJa": "私はこれらの主張に懐疑的です。",
+    "exampleVi": "Tôi hoài nghi về những tuyên bố này.",
+    "source": "built-in"
+  },
+  {
+    "id": "pre1kyu-010",
+    "word": "bureaucracy",
+    "level": ["準1級"],
+    "pos": "noun",
+    "japanese": "官僚主義、官僚制度",
+    "vietnamese": "bộ máy quan liêu",
+    "example": "Excessive bureaucracy slows down progress.",
+    "exampleJa": "過度な官僚主義は進歩を遅らせます。",
+    "exampleVi": "Bộ máy quan liêu quá mức làm chậm tiến độ.",
+    "source": "built-in"
+  }
+]

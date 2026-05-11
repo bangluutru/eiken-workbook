@@ -1,0 +1,122 @@
+[
+  {
+    "id": "3kyu-001",
+    "word": "environment",
+    "level": ["3級"],
+    "pos": "noun",
+    "japanese": "環境",
+    "vietnamese": "môi trường",
+    "example": "We should protect the environment.",
+    "exampleJa": "私たちは環境を守るべきです。",
+    "exampleVi": "Chúng ta nên bảo vệ môi trường.",
+    "source": "built-in"
+  },
+  {
+    "id": "3kyu-002",
+    "word": "necessary",
+    "level": ["3級"],
+    "pos": "adjective",
+    "japanese": "必要な",
+    "vietnamese": "cần thiết",
+    "example": "It is necessary to study hard.",
+    "exampleJa": "一生懸命勉強することが必要です。",
+    "exampleVi": "Việc học chăm chỉ là cần thiết.",
+    "source": "built-in"
+  },
+  {
+    "id": "3kyu-003",
+    "word": "improve",
+    "level": ["3級"],
+    "pos": "verb",
+    "japanese": "改善する、向上する",
+    "vietnamese": "cải thiện",
+    "example": "I want to improve my English skills.",
+    "exampleJa": "英語のスキルを向上させたいです。",
+    "exampleVi": "Tôi muốn cải thiện kỹ năng tiếng Anh.",
+    "source": "built-in"
+  },
+  {
+    "id": "3kyu-004",
+    "word": "opinion",
+    "level": ["3級"],
+    "pos": "noun",
+    "japanese": "意見",
+    "vietnamese": "ý kiến",
+    "example": "What is your opinion about this?",
+    "exampleJa": "これについてどう思いますか？",
+    "exampleVi": "Ý kiến của bạn về điều này là gì?",
+    "source": "built-in"
+  },
+  {
+    "id": "3kyu-005",
+    "word": "culture",
+    "level": ["3級"],
+    "pos": "noun",
+    "japanese": "文化",
+    "vietnamese": "văn hóa",
+    "example": "Japan has a rich culture.",
+    "exampleJa": "日本には豊かな文化があります。",
+    "exampleVi": "Nhật Bản có nền văn hóa phong phú.",
+    "source": "built-in"
+  },
+  {
+    "id": "3kyu-006",
+    "word": "experience",
+    "level": ["3級"],
+    "pos": "noun",
+    "japanese": "経験",
+    "vietnamese": "kinh nghiệm",
+    "example": "This is a great learning experience.",
+    "exampleJa": "これは素晴らしい学習体験です。",
+    "exampleVi": "Đây là một trải nghiệm học tập tuyệt vời.",
+    "source": "built-in"
+  },
+  {
+    "id": "3kyu-007",
+    "word": "decide",
+    "level": ["3級"],
+    "pos": "verb",
+    "japanese": "決める",
+    "vietnamese": "quyết định",
+    "example": "I need to decide soon.",
+    "exampleJa": "すぐに決める必要があります。",
+    "exampleVi": "Tôi cần quyết định sớm.",
+    "source": "built-in"
+  },
+  {
+    "id": "3kyu-008",
+    "word": "popular",
+    "level": ["3級"],
+    "pos": "adjective",
+    "japanese": "人気のある",
+    "vietnamese": "phổ biến",
+    "example": "This singer is very popular among young people.",
+    "exampleJa": "この歌手は若者の間でとても人気があります。",
+    "exampleVi": "Ca sĩ này rất phổ biến trong giới trẻ.",
+    "source": "built-in"
+  },
+  {
+    "id": "3kyu-009",
+    "word": "traditional",
+    "level": ["3級"],
+    "pos": "adjective",
+    "japanese": "伝統的な",
+    "vietnamese": "truyền thống",
+    "example": "They wore traditional Japanese clothes.",
+    "exampleJa": "彼らは伝統的な日本の服を着ていました。",
+    "exampleVi": "Họ mặc trang phục truyền thống của Nhật Bản.",
+    "source": "built-in"
+  },
+  {
+    "id": "3kyu-010",
+    "word": "volunteer",
+    "level": ["3級"],
+    "pos": "noun",
+    "japanese": "ボランティア",
+    "vietnamese": "tình nguyện viên",
+    "example": "She works as a volunteer on weekends.",
+    "exampleJa": "彼女は週末にボランティアとして働いています。",
+    "exampleVi": "Cô ấy làm tình nguyện vào cuối tuần.",
+    "source": "built-in"
+  }
+]

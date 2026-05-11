@@ -1,0 +1,122 @@
+[
+  {
+    "id": "4kyu-001",
+    "word": "beautiful",
+    "level": ["4級"],
+    "pos": "adjective",
+    "japanese": "美しい",
+    "vietnamese": "đẹp",
+    "example": "The sunset is beautiful tonight.",
+    "exampleJa": "今夜の夕日は美しいです。",
+    "exampleVi": "Hoàng hôn tối nay thật đẹp.",
+    "source": "built-in"
+  },
+  {
+    "id": "4kyu-002",
+    "word": "library",
+    "level": ["4級"],
+    "pos": "noun",
+    "japanese": "図書館",
+    "vietnamese": "thư viện",
+    "example": "I often study at the library.",
+    "exampleJa": "私はよく図書館で勉強します。",
+    "exampleVi": "Tôi thường học ở thư viện.",
+    "source": "built-in"
+  },
+  {
+    "id": "4kyu-003",
+    "word": "music",
+    "level": ["4級"],
+    "pos": "noun",
+    "japanese": "音楽",
+    "vietnamese": "âm nhạc",
+    "example": "I enjoy listening to music.",
+    "exampleJa": "私は音楽を聴くことが好きです。",
+    "exampleVi": "Tôi thích nghe âm nhạc.",
+    "source": "built-in"
+  },
+  {
+    "id": "4kyu-004",
+    "word": "travel",
+    "level": ["4級"],
+    "pos": "verb",
+    "japanese": "旅行する",
+    "vietnamese": "du lịch",
+    "example": "I want to travel to many countries.",
+    "exampleJa": "私はたくさんの国を旅行したいです。",
+    "exampleVi": "Tôi muốn du lịch đến nhiều quốc gia.",
+    "source": "built-in"
+  },
+  {
+    "id": "4kyu-005",
+    "word": "weekend",
+    "level": ["4級"],
+    "pos": "noun",
+    "japanese": "週末",
+    "vietnamese": "cuối tuần",
+    "example": "What do you do on weekends?",
+    "exampleJa": "週末は何をしますか？",
+    "exampleVi": "Bạn làm gì vào cuối tuần?",
+    "source": "built-in"
+  },
+  {
+    "id": "4kyu-006",
+    "word": "together",
+    "level": ["4級"],
+    "pos": "adverb",
+    "japanese": "一緒に",
+    "vietnamese": "cùng nhau",
+    "example": "Let's do it together.",
+    "exampleJa": "一緒にやりましょう。",
+    "exampleVi": "Hãy cùng nhau làm điều đó.",
+    "source": "built-in"
+  },
+  {
+    "id": "4kyu-007",
+    "word": "weather",
+    "level": ["4級"],
+    "pos": "noun",
+    "japanese": "天気",
+    "vietnamese": "thời tiết",
+    "example": "The weather is nice today.",
+    "exampleJa": "今日はいい天気です。",
+    "exampleVi": "Thời tiết hôm nay đẹp.",
+    "source": "built-in"
+  },
+  {
+    "id": "4kyu-008",
+    "word": "telephone",
+    "level": ["4級"],
+    "pos": "noun",
+    "japanese": "電話",
+    "vietnamese": "điện thoại",
+    "example": "Can you answer the telephone?",
+    "exampleJa": "電話に出てもらえますか？",
+    "exampleVi": "Bạn có thể nghe điện thoại không?",
+    "source": "built-in"
+  },
+  {
+    "id": "4kyu-009",
+    "word": "birthday",
+    "level": ["4級"],
+    "pos": "noun",
+    "japanese": "誕生日",
+    "vietnamese": "sinh nhật",
+    "example": "Happy birthday to you!",
+    "exampleJa": "お誕生日おめでとう！",
+    "exampleVi": "Chúc mừng sinh nhật bạn!",
+    "source": "built-in"
+  },
+  {
+    "id": "4kyu-010",
+    "word": "practice",
+    "level": ["4級"],
+    "pos": "verb",
+    "japanese": "練習する",
+    "vietnamese": "luyện tập",
+    "example": "I practice piano every evening.",
+    "exampleJa": "私は毎晩ピアノを練習します。",
+    "exampleVi": "Tôi luyện tập đàn piano mỗi tối.",
+    "source": "built-in"
+  }
+]

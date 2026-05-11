@@ -1,0 +1,122 @@
+[
+  {
+    "id": "2kyu-001",
+    "word": "analyze",
+    "level": ["2級"],
+    "pos": "verb",
+    "japanese": "分析する",
+    "vietnamese": "phân tích",
+    "example": "Scientists analyze data to find patterns.",
+    "exampleJa": "科学者はパターンを見つけるためにデータを分析します。",
+    "exampleVi": "Các nhà khoa học phân tích dữ liệu để tìm ra các mô hình.",
+    "source": "built-in"
+  },
+  {
+    "id": "2kyu-002",
+    "word": "controversy",
+    "level": ["2級"],
+    "pos": "noun",
+    "japanese": "論争、議論",
+    "vietnamese": "tranh cãi, gây tranh luận",
+    "example": "The policy caused a great deal of controversy.",
+    "exampleJa": "その政策は多くの論争を引き起こしました。",
+    "exampleVi": "Chính sách đó gây ra nhiều tranh cãi.",
+    "source": "built-in"
+  },
+  {
+    "id": "2kyu-003",
+    "word": "demonstrate",
+    "level": ["2級"],
+    "pos": "verb",
+    "japanese": "示す、証明する",
+    "vietnamese": "chứng minh, thể hiện",
+    "example": "The experiment demonstrated the theory.",
+    "exampleJa": "実験はその理論を証明しました。",
+    "exampleVi": "Thí nghiệm đã chứng minh lý thuyết.",
+    "source": "built-in"
+  },
+  {
+    "id": "2kyu-004",
+    "word": "approximately",
+    "level": ["2級"],
+    "pos": "adverb",
+    "japanese": "おおよそ、約",
+    "vietnamese": "khoảng, xấp xỉ",
+    "example": "The journey takes approximately two hours.",
+    "exampleJa": "その旅は約2時間かかります。",
+    "exampleVi": "Chuyến đi mất khoảng hai giờ.",
+    "source": "built-in"
+  },
+  {
+    "id": "2kyu-005",
+    "word": "sufficient",
+    "level": ["2級"],
+    "pos": "adjective",
+    "japanese": "十分な",
+    "vietnamese": "đủ, đầy đủ",
+    "example": "We do not have sufficient resources.",
+    "exampleJa": "十分なリソースがありません。",
+    "exampleVi": "Chúng ta không có đủ nguồn lực.",
+    "source": "built-in"
+  },
+  {
+    "id": "2kyu-006",
+    "word": "regardless",
+    "level": ["2級"],
+    "pos": "adverb",
+    "japanese": "〜にかかわらず",
+    "vietnamese": "bất kể",
+    "example": "We will continue regardless of the outcome.",
+    "exampleJa": "結果にかかわらず、私たちは続けます。",
+    "exampleVi": "Chúng ta sẽ tiếp tục bất kể kết quả.",
+    "source": "built-in"
+  },
+  {
+    "id": "2kyu-007",
+    "word": "phenomenon",
+    "level": ["2級"],
+    "pos": "noun",
+    "japanese": "現象",
+    "vietnamese": "hiện tượng",
+    "example": "Global warming is a complex phenomenon.",
+    "exampleJa": "地球温暖化は複雑な現象です。",
+    "exampleVi": "Sự nóng lên toàn cầu là một hiện tượng phức tạp.",
+    "source": "built-in"
+  },
+  {
+    "id": "2kyu-008",
+    "word": "consequence",
+    "level": ["2級"],
+    "pos": "noun",
+    "japanese": "結果、影響",
+    "vietnamese": "hậu quả",
+    "example": "Every action has a consequence.",
+    "exampleJa": "すべての行動には結果があります。",
+    "exampleVi": "Mọi hành động đều có hậu quả.",
+    "source": "built-in"
+  },
+  {
+    "id": "2kyu-009",
+    "word": "restrict",
+    "level": ["2級"],
+    "pos": "verb",
+    "japanese": "制限する",
+    "vietnamese": "hạn chế",
+    "example": "The new law restricts vehicle emissions.",
+    "exampleJa": "新しい法律は車の排出ガスを制限します。",
+    "exampleVi": "Luật mới hạn chế khí thải xe cộ.",
+    "source": "built-in"
+  },
+  {
+    "id": "2kyu-010",
+    "word": "contribute",
+    "level": ["2級"],
+    "pos": "verb",
+    "japanese": "貢献する",
+    "vietnamese": "đóng góp",
+    "example": "Everyone can contribute to solving this problem.",
+    "exampleJa": "誰でもこの問題の解決に貢献できます。",
+    "exampleVi": "Mọi người đều có thể đóng góp để giải quyết vấn đề này.",
+    "source": "built-in"
+  }
+]

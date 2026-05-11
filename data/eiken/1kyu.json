@@ -1,0 +1,122 @@
+[
+  {
+    "id": "1kyu-001",
+    "word": "esoteric",
+    "level": ["1級"],
+    "pos": "adjective",
+    "japanese": "難解な、秘伝の",
+    "vietnamese": "bí truyền, khó hiểu",
+    "example": "The professor's lectures were too esoteric for most students.",
+    "exampleJa": "その教授の講義はほとんどの学生には難解すぎました。",
+    "exampleVi": "Bài giảng của giáo sư quá khó hiểu đối với hầu hết sinh viên.",
+    "source": "built-in"
+  },
+  {
+    "id": "1kyu-002",
+    "word": "proliferate",
+    "level": ["1級"],
+    "pos": "verb",
+    "japanese": "急増する、繁殖する",
+    "vietnamese": "phát triển nhanh chóng, lan rộng",
+    "example": "Social media platforms have proliferated in recent years.",
+    "exampleJa": "ソーシャルメディアプラットフォームは近年急増しています。",
+    "exampleVi": "Các nền tảng mạng xã hội đã phát triển nhanh chóng trong những năm gần đây.",
+    "source": "built-in"
+  },
+  {
+    "id": "1kyu-003",
+    "word": "tenacious",
+    "level": ["1級"],
+    "pos": "adjective",
+    "japanese": "粘り強い、執拗な",
+    "vietnamese": "kiên trì, bền bỉ",
+    "example": "She is a tenacious researcher who never gives up.",
+    "exampleJa": "彼女は決して諦めない粘り強い研究者です。",
+    "exampleVi": "Cô ấy là một nhà nghiên cứu kiên trì không bao giờ bỏ cuộc.",
+    "source": "built-in"
+  },
+  {
+    "id": "1kyu-004",
+    "word": "eloquent",
+    "level": ["1級"],
+    "pos": "adjective",
+    "japanese": "雄弁な、説得力のある",
+    "vietnamese": "hùng hồn, có sức thuyết phục",
+    "example": "His eloquent speech moved the entire audience.",
+    "exampleJa": "彼の雄弁な演説は聴衆全体を感動させました。",
+    "exampleVi": "Bài phát biểu hùng hồn của anh ấy đã làm cả khán giả xúc động.",
+    "source": "built-in"
+  },
+  {
+    "id": "1kyu-005",
+    "word": "mitigate",
+    "level": ["1級"],
+    "pos": "verb",
+    "japanese": "軽減する、緩和する",
+    "vietnamese": "giảm thiểu, hạn chế",
+    "example": "We must find ways to mitigate the effects of climate change.",
+    "exampleJa": "気候変動の影響を軽減する方法を見つけなければなりません。",
+    "exampleVi": "Chúng ta phải tìm cách giảm thiểu tác động của biến đổi khí hậu.",
+    "source": "built-in"
+  },
+  {
+    "id": "1kyu-006",
+    "word": "indifference",
+    "level": ["1級"],
+    "pos": "noun",
+    "japanese": "無関心",
+    "vietnamese": "sự thờ ơ",
+    "example": "Her indifference to the problem shocked everyone.",
+    "exampleJa": "問題に対する彼女の無関心は皆を驚かせました。",
+    "exampleVi": "Sự thờ ơ của cô ấy đối với vấn đề đã khiến mọi người sốc.",
+    "source": "built-in"
+  },
+  {
+    "id": "1kyu-007",
+    "word": "paradoxical",
+    "level": ["1級"],
+    "pos": "adjective",
+    "japanese": "逆説的な",
+    "vietnamese": "nghịch lý",
+    "example": "It is paradoxical that poverty can lead to violence.",
+    "exampleJa": "貧困が暴力につながるというのは逆説的です。",
+    "exampleVi": "Thật nghịch lý khi đói nghèo có thể dẫn đến bạo lực.",
+    "source": "built-in"
+  },
+  {
+    "id": "1kyu-008",
+    "word": "exacerbate",
+    "level": ["1級"],
+    "pos": "verb",
+    "japanese": "悪化させる",
+    "vietnamese": "làm trầm trọng thêm",
+    "example": "Drought can exacerbate food shortages.",
+    "exampleJa": "干ばつは食料不足を悪化させる可能性があります。",
+    "exampleVi": "Hạn hán có thể làm trầm trọng thêm tình trạng thiếu lương thực.",
+    "source": "built-in"
+  },
+  {
+    "id": "1kyu-009",
+    "word": "clandestine",
+    "level": ["1級"],
+    "pos": "adjective",
+    "japanese": "秘密の、内密の",
+    "vietnamese": "bí mật, lén lút",
+    "example": "They held clandestine meetings to plan the strategy.",
+    "exampleJa": "彼らは戦略を計画するために秘密の会合を開きました。",
+    "exampleVi": "Họ tổ chức các cuộc họp bí mật để lên kế hoạch chiến lược.",
+    "source": "built-in"
+  },
+  {
+    "id": "1kyu-010",
+    "word": "ephemeral",
+    "level": ["1級"],
+    "pos": "adjective",
+    "japanese": "短命な、はかない",
+    "vietnamese": "phù du, ngắn ngủi",
+    "example": "Fame can be ephemeral in the age of social media.",
+    "exampleJa": "ソーシャルメディアの時代において、名声ははかないものです。",
+    "exampleVi": "Danh tiếng có thể phù du trong thời đại mạng xã hội.",
+    "source": "built-in"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "5kyu-001",
+    "word": "apple",
+    "level": ["5級"],
+    "pos": "noun",
+    "japanese": "りんご",
+    "vietnamese": "quả táo",
+    "example": "I eat an apple every day.",
+    "exampleJa": "私は毎日りんごを食べます。",
+    "exampleVi": "Tôi ăn một quả táo mỗi ngày.",
+    "source": "built-in"
+  },
+  {
+    "id": "5kyu-002",
+    "word": "book",
+    "level": ["5級"],
+    "pos": "noun",
+    "japanese": "本",
+    "vietnamese": "cuốn sách",
+    "example": "This is my favorite book.",
+    "exampleJa": "これは私のお気に入りの本です。",
+    "exampleVi": "Đây là cuốn sách yêu thích của tôi.",
+    "source": "built-in"
+  },
+  {
+    "id": "5kyu-003",
+    "word": "cat",
+    "level": ["5級"],
+    "pos": "noun",
+    "japanese": "猫",
+    "vietnamese": "con mèo",
+    "example": "My cat is very cute.",
+    "exampleJa": "私の猫はとてもかわいいです。",
+    "exampleVi": "Con mèo của tôi rất dễ thương.",
+    "source": "built-in"
+  },
+  {
+    "id": "5kyu-004",
+    "word": "dog",
+    "level": ["5級"],
+    "pos": "noun",
+    "japanese": "犬",
+    "vietnamese": "con chó",
+    "example": "The dog is running in the park.",
+    "exampleJa": "犬が公園で走っています。",
+    "exampleVi": "Con chó đang chạy trong công viên.",
+    "source": "built-in"
+  },
+  {
+    "id": "5kyu-005",
+    "word": "happy",
+    "level": ["5級"],
+    "pos": "adjective",
+    "japanese": "うれしい、幸せな",
+    "vietnamese": "vui mừng, hạnh phúc",
+    "example": "I am very happy today.",
+    "exampleJa": "今日はとてもうれしいです。",
+    "exampleVi": "Hôm nay tôi rất vui.",
+    "source": "built-in"
+  },
+  {
+    "id": "5kyu-006",
+    "word": "school",
+    "level": ["5級"],
+    "pos": "noun",
+    "japanese": "学校",
+    "vietnamese": "trường học",
+    "example": "I go to school by bus.",
+    "exampleJa": "私はバスで学校に行きます。",
+    "exampleVi": "Tôi đi học bằng xe buýt.",
+    "source": "built-in"
+  },
+  {
+    "id": "5kyu-007",
+    "word": "water",
+    "level": ["5級"],
+    "pos": "noun",
+    "japanese": "水",
+    "vietnamese": "nước",
+    "example": "Please drink more water.",
+    "exampleJa": "もっと水を飲んでください。",
+    "exampleVi": "Hãy uống nhiều nước hơn.",
+    "source": "built-in"
+  },
+  {
+    "id": "5kyu-008",
+    "word": "friend",
+    "level": ["5級"],
+    "pos": "noun",
+    "japanese": "友達",
+    "vietnamese": "bạn bè",
+    "example": "She is my best friend.",
+    "exampleJa": "彼女は私の親友です。",
+    "exampleVi": "Cô ấy là người bạn thân nhất của tôi.",
+    "source": "built-in"
+  },
+  {
+    "id": "5kyu-009",
+    "word": "play",
+    "level": ["5級"],
+    "pos": "verb",
+    "japanese": "遊ぶ、演奏する",
+    "vietnamese": "chơi, biểu diễn",
+    "example": "Let's play soccer after school.",
+    "exampleJa": "放課後にサッカーをしよう。",
+    "exampleVi": "Hãy chơi bóng đá sau giờ học.",
+    "source": "built-in"
+  },
+  {
+    "id": "5kyu-010",
+    "word": "eat",
+    "level": ["5級"],
+    "pos": "verb",
+    "japanese": "食べる",
+    "vietnamese": "ăn",
+    "example": "What do you want to eat?",
+    "exampleJa": "何を食べたいですか？",
+    "exampleVi": "Bạn muốn ăn gì?",
+    "source": "built-in"
+  }
+]

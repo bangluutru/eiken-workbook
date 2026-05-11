@@ -1,0 +1,122 @@
+[
+  {
+    "id": "pre2kyu-001",
+    "word": "society",
+    "level": ["準2級"],
+    "pos": "noun",
+    "japanese": "社会",
+    "vietnamese": "xã hội",
+    "example": "Technology has changed our society greatly.",
+    "exampleJa": "技術は私たちの社会を大きく変えました。",
+    "exampleVi": "Công nghệ đã thay đổi xã hội của chúng ta rất nhiều.",
+    "source": "built-in"
+  },
+  {
+    "id": "pre2kyu-002",
+    "word": "achieve",
+    "level": ["準2級"],
+    "pos": "verb",
+    "japanese": "達成する",
+    "vietnamese": "đạt được",
+    "example": "She worked hard to achieve her goal.",
+    "exampleJa": "彼女は目標を達成するために努力しました。",
+    "exampleVi": "Cô ấy đã nỗ lực để đạt được mục tiêu.",
+    "source": "built-in"
+  },
+  {
+    "id": "pre2kyu-003",
+    "word": "suggest",
+    "level": ["準2級"],
+    "pos": "verb",
+    "japanese": "提案する",
+    "vietnamese": "đề xuất",
+    "example": "I suggest we meet earlier.",
+    "exampleJa": "もっと早く会うことを提案します。",
+    "exampleVi": "Tôi đề xuất chúng ta gặp nhau sớm hơn.",
+    "source": "built-in"
+  },
+  {
+    "id": "pre2kyu-004",
+    "word": "benefit",
+    "level": ["準2級"],
+    "pos": "noun",
+    "japanese": "利益、恩恵",
+    "vietnamese": "lợi ích",
+    "example": "Exercise has many health benefits.",
+    "exampleJa": "運動には多くの健康上の利益があります。",
+    "exampleVi": "Tập thể dục mang lại nhiều lợi ích sức khỏe.",
+    "source": "built-in"
+  },
+  {
+    "id": "pre2kyu-005",
+    "word": "develop",
+    "level": ["準2級"],
+    "pos": "verb",
+    "japanese": "発展する、開発する",
+    "vietnamese": "phát triển",
+    "example": "This city has developed rapidly.",
+    "exampleJa": "この都市は急速に発展しました。",
+    "exampleVi": "Thành phố này đã phát triển nhanh chóng.",
+    "source": "built-in"
+  },
+  {
+    "id": "pre2kyu-006",
+    "word": "pollution",
+    "level": ["準2級"],
+    "pos": "noun",
+    "japanese": "汚染",
+    "vietnamese": "ô nhiễm",
+    "example": "Air pollution is a serious problem.",
+    "exampleJa": "大気汚染は深刻な問題です。",
+    "exampleVi": "Ô nhiễm không khí là một vấn đề nghiêm trọng.",
+    "source": "built-in"
+  },
+  {
+    "id": "pre2kyu-007",
+    "word": "responsibility",
+    "level": ["準2級"],
+    "pos": "noun",
+    "japanese": "責任",
+    "vietnamese": "trách nhiệm",
+    "example": "We have a responsibility to help others.",
+    "exampleJa": "私たちは他の人を助ける責任があります。",
+    "exampleVi": "Chúng ta có trách nhiệm giúp đỡ người khác.",
+    "source": "built-in"
+  },
+  {
+    "id": "pre2kyu-008",
+    "word": "communicate",
+    "level": ["準2級"],
+    "pos": "verb",
+    "japanese": "伝える、コミュニケーションをとる",
+    "vietnamese": "giao tiếp",
+    "example": "It is important to communicate clearly.",
+    "exampleJa": "明確にコミュニケーションをとることが大切です。",
+    "exampleVi": "Giao tiếp rõ ràng là điều quan trọng.",
+    "source": "built-in"
+  },
+  {
+    "id": "pre2kyu-009",
+    "word": "community",
+    "level": ["準2級"],
+    "pos": "noun",
+    "japanese": "地域社会、コミュニティ",
+    "vietnamese": "cộng đồng",
+    "example": "She volunteers in the local community.",
+    "exampleJa": "彼女は地域コミュニティでボランティアをしています。",
+    "exampleVi": "Cô ấy tình nguyện trong cộng đồng địa phương.",
+    "source": "built-in"
+  },
+  {
+    "id": "pre2kyu-010",
+    "word": "global",
+    "level": ["準2級"],
+    "pos": "adjective",
+    "japanese": "世界的な、グローバルな",
+    "vietnamese": "toàn cầu",
+    "example": "Climate change is a global issue.",
+    "exampleJa": "気候変動は世界的な問題です。",
+    "exampleVi": "Biến đổi khí hậu là vấn đề toàn cầu.",
+    "source": "built-in"
+  }
+]
