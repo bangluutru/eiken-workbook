@@ -42,14 +42,16 @@ export function WorksheetPreview() {
       {pages.map((pageVocab, pageIdx) => (
         <div
           key={pageIdx}
-          className="bg-white shadow-md border border-gray-200 flex-shrink-0 overflow-hidden relative"
+          className="bg-white shadow-md border border-gray-200 flex-shrink-0 relative"
           style={{
             width: `${pageW}mm`,
-            minHeight: `${pageH}mm`,
+            height: `${pageH}mm`,
+            overflow: 'hidden',
             paddingTop: PAGE_PADDING.y,
             paddingBottom: PAGE_PADDING.y,
             paddingLeft: PAGE_PADDING.x,
             paddingRight: PAGE_PADDING.x,
+            boxSizing: 'border-box',
           }}
         >
           <div

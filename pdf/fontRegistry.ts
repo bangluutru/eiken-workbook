@@ -46,22 +46,37 @@ export function registerFonts(origin = '') {
   const base = origin.replace(/\/$/, '')
   const url = (path: string) => `${base}${path}`
 
-  Font.register({ family: 'HocTro', src: url('/fonts/HLHOCTRO.TTF') })
+  // Each font must declare every weight+style combo it will be used with.
+  // Custom fonts have no real italic/bold-italic files, so we map those
+  // variants to the closest real file — preventing @react-pdf/renderer from
+  // throwing "Could not resolve font" when it encounters fontStyle:'italic'.
+  const single = (src: string) => [
+    { src, fontWeight: 'normal' as const, fontStyle: 'normal' as const },
+    { src, fontWeight: 'normal' as const, fontStyle: 'italic' as const },
+    { src, fontWeight: 'bold'   as const, fontStyle: 'normal' as const },
+    { src, fontWeight: 'bold'   as const, fontStyle: 'italic' as const },
+  ]
+
+  Font.register({ family: 'HocTro', fonts: single(url('/fonts/HLHOCTRO.TTF')) })
   Font.register({
     family: 'HP001-4hang',
     fonts: [
-      { src: url('/fonts/HP001_4_hang_normal.ttf'), fontWeight: 'normal' },
-      { src: url('/fonts/HP001_4_hang_bold.ttf'), fontWeight: 'bold' },
+      { src: url('/fonts/HP001_4_hang_normal.ttf'), fontWeight: 'normal', fontStyle: 'normal' },
+      { src: url('/fonts/HP001_4_hang_normal.ttf'), fontWeight: 'normal', fontStyle: 'italic' },
+      { src: url('/fonts/HP001_4_hang_bold.ttf'),   fontWeight: 'bold',   fontStyle: 'normal' },
+      { src: url('/fonts/HP001_4_hang_bold.ttf'),   fontWeight: 'bold',   fontStyle: 'italic' },
     ],
   })
-  Font.register({ family: 'HP001-4hang-1oly', src: url('/fonts/HP001_4_hang_1_o_ly.ttf') })
-  Font.register({ family: 'HP001-4hang-2oly', src: url('/fonts/HP001_4_hang_2_o_ly.ttf') })
+  Font.register({ family: 'HP001-4hang-1oly', fonts: single(url('/fonts/HP001_4_hang_1_o_ly.ttf')) })
+  Font.register({ family: 'HP001-4hang-2oly', fonts: single(url('/fonts/HP001_4_hang_2_o_ly.ttf')) })
   Font.register({
     family: 'HP001-5hang',
     fonts: [
-      { src: url('/fonts/HP001_5_hang_normal.ttf'), fontWeight: 'normal' },
-      { src: url('/fonts/HP001_5_hang_bold.ttf'), fontWeight: 'bold' },
+      { src: url('/fonts/HP001_5_hang_normal.ttf'), fontWeight: 'normal', fontStyle: 'normal' },
+      { src: url('/fonts/HP001_5_hang_normal.ttf'), fontWeight: 'normal', fontStyle: 'italic' },
+      { src: url('/fonts/HP001_5_hang_bold.ttf'),   fontWeight: 'bold',   fontStyle: 'normal' },
+      { src: url('/fonts/HP001_5_hang_bold.ttf'),   fontWeight: 'bold',   fontStyle: 'italic' },
     ],
   })
-  Font.register({ family: 'HP001-5hang-1oly', src: url('/fonts/HP001_5_hang_1_o_ly.ttf') })
+  Font.register({ family: 'HP001-5hang-1oly', fonts: single(url('/fonts/HP001_5_hang_1_o_ly.ttf')) })
 }
