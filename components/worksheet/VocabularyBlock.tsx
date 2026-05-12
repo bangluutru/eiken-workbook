@@ -8,6 +8,7 @@ type Props = {
   vocabulary: Vocabulary
   settings: WorksheetSettings
   index: number
+  lines: number
 }
 
 function getTraceBorderStyle(style: string): string {
@@ -21,7 +22,7 @@ function getTraceBorderStyle(style: string): string {
   }
 }
 
-export function VocabularyBlock({ vocabulary: vocab, settings: s, index }: Props) {
+export function VocabularyBlock({ vocabulary: vocab, settings: s, index, lines }: Props) {
   const fontSize = Math.round(16 * s.fontScale)
   const smallFontSize = Math.round(12 * s.fontScale)
 
@@ -116,7 +117,7 @@ export function VocabularyBlock({ vocabulary: vocab, settings: s, index }: Props
       </div>
 
       {/* Writing grid */}
-      <WritingGrid lines={s.writingLines} settings={s} />
+      <WritingGrid lines={lines} settings={s} />
 
       {/* Recall test */}
       {s.showRecall && (vocab.japanese || vocab.vietnamese) && (

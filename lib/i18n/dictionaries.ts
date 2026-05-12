@@ -68,6 +68,7 @@ type Dictionary = {
   showMeaningEn: string
   noPreview: string
   loading: string
+  writingLinesAutoHint: string
 }
 
 const ja: Dictionary = {
@@ -138,6 +139,7 @@ const ja: Dictionary = {
   showMeaningEn: '英語の意味を表示',
   noPreview: 'プレビューする単語を選択してください',
   loading: '読み込み中...',
+  writingLinesAutoHint: '1ページの単語数と表示設定に応じて自動調整',
 }
 
 const vi: Dictionary = {
@@ -208,6 +210,7 @@ const vi: Dictionary = {
   showMeaningEn: 'Hiển thị nghĩa tiếng Anh',
   noPreview: 'Vui lòng chọn từ để xem trước',
   loading: 'Đang tải...',
+  writingLinesAutoHint: 'Tự động điều chỉnh theo số từ trên trang và cài đặt hiển thị',
 }
 
 const en: Dictionary = {
@@ -278,6 +281,7 @@ const en: Dictionary = {
   showMeaningEn: 'Show English meaning',
   noPreview: 'Please select words to preview',
   loading: 'Loading...',
+  writingLinesAutoHint: 'Automatically adjusted based on words per page and display settings',
 }
 
 export const dictionaries: Record<Locale, Dictionary> = { ja, vi, en }

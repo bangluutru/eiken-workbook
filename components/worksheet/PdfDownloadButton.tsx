@@ -15,19 +15,39 @@ export function PdfDownloadButton() {
     setLoading(true)
     setError(null)
     try {
-      // Dynamic imports to ensure browser-only execution and avoid SSR bundle issues
+      // Dynamic imports: keep @react-pdf/renderer out of the SSR bundle
       const [{ pdf }, { WorksheetDocument }, { registerFonts }] = await Promise.all([
         import('@react-pdf/renderer'),
         import('@/pdf/WorksheetDocument'),
         import('@/pdf/fontRegistry'),
       ])
 
-      // Use absolute URLs so @react-pdf/renderer can fetch custom fonts via XHR
+      // Absolute URLs so react-pdf can XHR-fetch custom font files
       registerFonts(window.location.origin)
 
-      const blob = await pdf(
-        <WorksheetDocument vocabulary={selectedVocabulary} settings={settings} />
-      ).toBlob()
+      // React 19 concurrent mode makes updateContainer async.
+      // We must wait for the 'change' event (fired after React commits the
+      // document tree) before calling toBlob() — otherwise container.document
+      // is still null and layoutDocument hangs indefinitely.
+      const instance = pdf()
+
+      await new Promise<void>((resolve, reject) => {
+        const timer = setTimeout(
+          () => reject(new Error('PDF render timed out after 30s')),
+          30_000
+        )
+        const handler = () => {
+          clearTimeout(timer)
+          instance.removeListener('change', handler)
+          resolve()
+        }
+        instance.on('change', handler)
+        instance.updateContainer(
+          <WorksheetDocument vocabulary={selectedVocabulary} settings={settings} />
+        )
+      })
+
+      const blob = await instance.toBlob()
 
       const url = URL.createObjectURL(blob)
       const a = document.createElement('a')
@@ -37,7 +57,7 @@ export function PdfDownloadButton() {
       document.body.appendChild(a)
       a.click()
       document.body.removeChild(a)
-      // Revoke after a delay so the browser can start the download
+      // Revoke after a delay so the browser has time to start the download
       setTimeout(() => URL.revokeObjectURL(url), 10_000)
     } catch (err) {
       console.error('PDF generation failed:', err)

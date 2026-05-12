@@ -3,6 +3,7 @@
 import { useWorkbookStore } from '@/store/useWorkbookStore'
 import { t } from '@/lib/i18n/dictionaries'
 import { VocabularyBlock } from './VocabularyBlock'
+import { computeWritingLines } from '@/lib/worksheet/computeWritingLines'
 
 // Physical paper dimensions in mm
 const PAGE_DIMS = {
@@ -26,6 +27,8 @@ export function WorksheetPreview() {
 
   const wordsPerPage =
     settings.wordsPerPage === 'auto' ? 3 : settings.wordsPerPage
+
+  const writingLines = computeWritingLines(settings)
 
   const pages: typeof selectedVocabulary[] = []
   for (let i = 0; i < selectedVocabulary.length; i += wordsPerPage) {
@@ -67,6 +70,7 @@ export function WorksheetPreview() {
                 vocabulary={vocab}
                 settings={settings}
                 index={pageIdx * wordsPerPage + i + 1}
+                lines={writingLines}
               />
             ))}
           </div>

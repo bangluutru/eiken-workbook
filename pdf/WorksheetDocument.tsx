@@ -4,6 +4,7 @@ import type { WorksheetSettings } from '@/types/worksheet'
 import { pdfStyles } from './pdfStyles'
 import { VocabularyBlockPdf } from './VocabularyBlockPdf'
 import { getBodyFont } from './fontRegistry'
+import { computeWritingLines } from '@/lib/worksheet/computeWritingLines'
 
 type Props = {
   vocabulary: Vocabulary[]
@@ -20,6 +21,8 @@ function getPageSize(settings: WorksheetSettings): [number, number] | 'A4' | 'LE
 export function WorksheetDocument({ vocabulary, settings }: Props) {
   const wordsPerPage =
     settings.wordsPerPage === 'auto' ? 3 : settings.wordsPerPage
+
+  const writingLines = computeWritingLines(settings)
 
   const pages: Vocabulary[][] = []
   for (let i = 0; i < vocabulary.length; i += wordsPerPage) {
@@ -44,6 +47,7 @@ export function WorksheetDocument({ vocabulary, settings }: Props) {
                 vocabulary={vocab}
                 settings={settings}
                 index={pageIdx * wordsPerPage + i + 1}
+                lines={writingLines}
               />
             ))}
           </View>

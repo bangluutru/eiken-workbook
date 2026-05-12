@@ -9,9 +9,10 @@ type Props = {
   vocabulary: Vocabulary
   settings: WorksheetSettings
   index: number
+  lines: number
 }
 
-export function VocabularyBlockPdf({ vocabulary: vocab, settings: s, index }: Props) {
+export function VocabularyBlockPdf({ vocabulary: vocab, settings: s, index, lines }: Props) {
   const fs = s.fontScale
   const traceText = Array(Math.ceil(50 / (vocab.word.length + 3)))
     .fill(vocab.word)
@@ -89,7 +90,7 @@ export function VocabularyBlockPdf({ vocabulary: vocab, settings: s, index }: Pr
       </Text>
 
       {/* Writing grid */}
-      <WritingGridPdf lines={s.writingLines} fontScale={fs} />
+      <WritingGridPdf lines={lines} fontScale={fs} />
 
       {/* Recall */}
       {s.showRecall && (vocab.japanese || vocab.vietnamese) && (

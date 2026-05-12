@@ -4,6 +4,7 @@ import { useWorkbookStore } from '@/store/useWorkbookStore'
 import { t } from '@/lib/i18n/dictionaries'
 import type { WorksheetSettings, TraceStyle } from '@/types/worksheet'
 import { FONT_OPTIONS } from '@/pdf/fontRegistry'
+import { computeWritingLines } from '@/lib/worksheet/computeWritingLines'
 
 const WORDS_PER_PAGE_OPTIONS = ['auto', 1, 2, 3, 4, 5, 6, 8, 10] as const
 const TRACE_STYLES: TraceStyle[] = ['solid', 'dotted', 'dashed']
@@ -115,23 +116,20 @@ export function SettingsPanel() {
         </div>
       </section>
 
-      {/* Writing lines */}
+      {/* Writing lines — auto-computed from wordsPerPage */}
       <section>
-        <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
-          {t(locale, 'writingLines')}: {s.writingLines}
+        <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">
+          {t(locale, 'writingLines')}
         </h3>
-        <input
-          type="range"
-          min={1}
-          max={10}
-          value={s.writingLines}
-          onChange={(e) => update('writingLines', Number(e.target.value))}
-          className="w-full accent-blue-600"
-        />
-        <div className="flex justify-between text-xs text-gray-400 mt-1">
-          <span>1</span>
-          <span>10</span>
-        </div>
+        <p className="text-sm text-gray-600">
+          {t(locale, 'auto')}{' '}
+          <span className="font-medium text-blue-600">
+            {computeWritingLines(s)} {t(locale, 'writingLines').toLowerCase()}
+          </span>
+        </p>
+        <p className="text-xs text-gray-400 mt-0.5">
+          {t(locale, 'writingLinesAutoHint')}
+        </p>
       </section>
 
       {/* Trace style */}
