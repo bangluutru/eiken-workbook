@@ -63,7 +63,7 @@ export function VocabularyList() {
   }
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col">
       {/* Search */}
       <div className="relative mb-2">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" />
@@ -124,7 +124,7 @@ export function VocabularyList() {
       </div>
 
       {/* List */}
-      <div className="flex-1 overflow-y-auto divide-y divide-stone-100 rounded-xl border border-stone-200">
+      <div className="divide-y divide-stone-100 rounded-xl border border-stone-200">
         {filtered.length === 0 && (
           <div className="py-8 text-center text-sm text-stone-400">
             {searchQuery

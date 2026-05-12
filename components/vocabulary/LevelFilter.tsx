@@ -35,7 +35,7 @@ export function LevelFilter() {
 
   return (
     <div className="space-y-2">
-      <div className="text-xs font-semibold text-stone-400 uppercase tracking-wider">
+      <div className="text-[11px] font-semibold text-on-surface-variant uppercase tracking-wider">
         {t(locale, 'selectLevel')}
       </div>
       <div className="flex flex-wrap gap-1.5">
@@ -43,8 +43,8 @@ export function LevelFilter() {
           onClick={() => setSelectedLevels([])}
           className={`px-2.5 py-1 rounded-full text-xs font-medium border transition-colors ${
             allSelected
-              ? 'bg-stone-800 text-white border-stone-800'
-              : 'bg-stone-100 text-stone-700 border-transparent hover:bg-stone-200'
+              ? 'bg-primary text-on-primary border-transparent'
+              : 'bg-surface-container text-on-surface-variant border-transparent hover:bg-surface-container-high'
           }`}
         >
           {t(locale, 'allLevels')}
