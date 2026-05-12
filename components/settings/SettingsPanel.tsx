@@ -23,7 +23,7 @@ function Toggle({
       <div
         onClick={() => onChange(!checked)}
         className={`w-9 h-5 rounded-full relative transition-colors cursor-pointer ${
-          checked ? 'bg-blue-600' : 'bg-gray-300'
+          checked ? 'bg-indigo-600' : 'bg-gray-300'
         }`}
       >
         <span
@@ -32,7 +32,7 @@ function Toggle({
           }`}
         />
       </div>
-      <span className="text-sm text-gray-700">{label}</span>
+      <span className="text-sm text-stone-700">{label}</span>
     </label>
   )
 }
@@ -52,7 +52,7 @@ export function SettingsPanel() {
     <div className="space-y-5">
       {/* Paper */}
       <section>
-        <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
+        <h3 className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-2">
           {t(locale, 'paperSize')}
         </h3>
         <div className="flex gap-2">
@@ -62,8 +62,8 @@ export function SettingsPanel() {
               onClick={() => update('paperSize', size)}
               className={`flex-1 py-1.5 rounded text-sm font-medium border transition-colors ${
                 s.paperSize === size
-                  ? 'bg-blue-600 text-white border-blue-600'
-                  : 'bg-white text-gray-600 border-gray-200 hover:border-blue-400'
+                  ? 'bg-indigo-600 text-white border-indigo-600'
+                  : 'bg-white text-stone-600 border-stone-200 hover:border-indigo-400'
               }`}
             >
               {size}
@@ -74,7 +74,7 @@ export function SettingsPanel() {
 
       {/* Orientation */}
       <section>
-        <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
+        <h3 className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-2">
           {t(locale, 'orientation')}
         </h3>
         <div className="flex gap-2">
@@ -84,8 +84,8 @@ export function SettingsPanel() {
               onClick={() => update('orientation', o)}
               className={`flex-1 py-1.5 rounded text-sm font-medium border transition-colors ${
                 s.orientation === o
-                  ? 'bg-blue-600 text-white border-blue-600'
-                  : 'bg-white text-gray-600 border-gray-200 hover:border-blue-400'
+                  ? 'bg-indigo-600 text-white border-indigo-600'
+                  : 'bg-white text-stone-600 border-stone-200 hover:border-indigo-400'
               }`}
             >
               {o === 'portrait' ? t(locale, 'portrait') : t(locale, 'landscape')}
@@ -96,7 +96,7 @@ export function SettingsPanel() {
 
       {/* Words per page */}
       <section>
-        <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
+        <h3 className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-2">
           {t(locale, 'wordsPerPage')}
         </h3>
         <div className="flex flex-wrap gap-1.5">
@@ -106,8 +106,8 @@ export function SettingsPanel() {
               onClick={() => update('wordsPerPage', opt)}
               className={`px-2.5 py-1 rounded text-sm font-medium border transition-colors ${
                 s.wordsPerPage === opt
-                  ? 'bg-blue-600 text-white border-blue-600'
-                  : 'bg-white text-gray-600 border-gray-200 hover:border-blue-400'
+                  ? 'bg-indigo-600 text-white border-indigo-600'
+                  : 'bg-white text-stone-600 border-stone-200 hover:border-indigo-400'
               }`}
             >
               {opt === 'auto' ? t(locale, 'auto') : opt}
@@ -118,23 +118,23 @@ export function SettingsPanel() {
 
       {/* Writing lines — auto-computed from wordsPerPage */}
       <section>
-        <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1">
+        <h3 className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-1">
           {t(locale, 'writingLines')}
         </h3>
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-stone-600">
           {t(locale, 'auto')}{' '}
-          <span className="font-medium text-blue-600">
+          <span className="font-medium text-indigo-600">
             {computeWritingLines(s)} {t(locale, 'writingLines').toLowerCase()}
           </span>
         </p>
-        <p className="text-xs text-gray-400 mt-0.5">
+        <p className="text-xs text-stone-400 mt-0.5">
           {t(locale, 'writingLinesAutoHint')}
         </p>
       </section>
 
       {/* Trace style */}
       <section>
-        <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
+        <h3 className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-2">
           {t(locale, 'traceStyle')}
         </h3>
         <div className="flex gap-2">
@@ -144,8 +144,8 @@ export function SettingsPanel() {
               onClick={() => update('traceStyle', style)}
               className={`flex-1 py-1.5 rounded text-sm font-medium border transition-colors ${
                 s.traceStyle === style
-                  ? 'bg-blue-600 text-white border-blue-600'
-                  : 'bg-white text-gray-600 border-gray-200 hover:border-blue-400'
+                  ? 'bg-indigo-600 text-white border-indigo-600'
+                  : 'bg-white text-stone-600 border-stone-200 hover:border-indigo-400'
               }`}
             >
               {t(locale, style as 'solid' | 'dotted' | 'dashed')}
@@ -156,7 +156,7 @@ export function SettingsPanel() {
 
       {/* Trace opacity */}
       <section>
-        <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
+        <h3 className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-2">
           {t(locale, 'traceOpacity')}: {Math.round(s.traceOpacity * 100)}%
         </h3>
         <input
@@ -165,13 +165,13 @@ export function SettingsPanel() {
           max={100}
           value={Math.round(s.traceOpacity * 100)}
           onChange={(e) => update('traceOpacity', Number(e.target.value) / 100)}
-          className="w-full accent-blue-600"
+          className="w-full accent-indigo-600"
         />
       </section>
 
       {/* Font scale */}
       <section>
-        <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
+        <h3 className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-2">
           {t(locale, 'fontScale')}: {s.fontScale.toFixed(1)}x
         </h3>
         <input
@@ -180,9 +180,9 @@ export function SettingsPanel() {
           max={150}
           value={Math.round(s.fontScale * 100)}
           onChange={(e) => update('fontScale', Number(e.target.value) / 100)}
-          className="w-full accent-blue-600"
+          className="w-full accent-indigo-600"
         />
-        <div className="flex justify-between text-xs text-gray-400 mt-1">
+        <div className="flex justify-between text-xs text-stone-400 mt-1">
           <span>0.5x</span>
           <span>1.5x</span>
         </div>
@@ -190,13 +190,13 @@ export function SettingsPanel() {
 
       {/* Font family */}
       <section>
-        <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
+        <h3 className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-2">
           {t(locale, 'fontFamily')}
         </h3>
         <select
           value={s.fontFamily}
           onChange={(e) => update('fontFamily', e.target.value as WorksheetSettings['fontFamily'])}
-          className="w-full px-2.5 py-1.5 rounded border border-gray-200 text-sm text-gray-700 bg-white focus:outline-none focus:border-blue-400"
+          className="w-full px-2.5 py-1.5 rounded border border-stone-200 text-sm text-stone-700 bg-white focus:outline-none focus:border-indigo-400"
         >
           {FONT_OPTIONS.map((opt) => (
             <option key={opt.value} value={opt.value}>
@@ -208,7 +208,7 @@ export function SettingsPanel() {
 
       {/* Display toggles */}
       <section>
-        <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">
+        <h3 className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-3">
           表示設定
         </h3>
         <div className="space-y-2.5">

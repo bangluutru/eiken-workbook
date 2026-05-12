@@ -5,24 +5,26 @@ import { EIKEN_LEVELS } from '@/types/vocabulary'
 import type { EikenLevel } from '@/types/vocabulary'
 import { t } from '@/lib/i18n/dictionaries'
 
+// Inactive tint — L=96% C=0.045, fg L=40% C=0.10
 const LEVEL_COLORS: Partial<Record<EikenLevel, string>> = {
-  '5級': 'bg-green-100 text-green-800 border-green-300',
-  '4級': 'bg-teal-100 text-teal-800 border-teal-300',
-  '3級': 'bg-blue-100 text-blue-800 border-blue-300',
-  '準2級': 'bg-indigo-100 text-indigo-800 border-indigo-300',
-  '2級': 'bg-orange-100 text-orange-800 border-orange-300',
-  '準1級': 'bg-red-100 text-red-800 border-red-300',
-  '1級': 'bg-rose-100 text-rose-800 border-rose-300',
+  '5級':   'bg-[oklch(96%_0.045_150)] text-[oklch(40%_0.10_150)] border-transparent hover:brightness-95',
+  '4級':   'bg-[oklch(96%_0.045_195)] text-[oklch(40%_0.10_195)] border-transparent hover:brightness-95',
+  '3級':   'bg-[oklch(96%_0.045_240)] text-[oklch(40%_0.10_240)] border-transparent hover:brightness-95',
+  '準2級': 'bg-[oklch(96%_0.045_275)] text-[oklch(40%_0.10_275)] border-transparent hover:brightness-95',
+  '2級':   'bg-[oklch(96%_0.045_60)]  text-[oklch(40%_0.10_60)]  border-transparent hover:brightness-95',
+  '準1級': 'bg-[oklch(96%_0.045_30)]  text-[oklch(40%_0.10_30)]  border-transparent hover:brightness-95',
+  '1級':   'bg-[oklch(96%_0.045_10)]  text-[oklch(40%_0.10_10)]  border-transparent hover:brightness-95',
 }
 
+// Active solid — L=58% C=0.14, fg white
 const LEVEL_COLORS_ACTIVE: Partial<Record<EikenLevel, string>> = {
-  '5級': 'bg-green-500 text-white border-green-500',
-  '4級': 'bg-teal-500 text-white border-teal-500',
-  '3級': 'bg-blue-500 text-white border-blue-500',
-  '準2級': 'bg-indigo-500 text-white border-indigo-500',
-  '2級': 'bg-orange-500 text-white border-orange-500',
-  '準1級': 'bg-red-500 text-white border-red-500',
-  '1級': 'bg-rose-500 text-white border-rose-500',
+  '5級':   'bg-[oklch(58%_0.14_150)] text-white border-transparent',
+  '4級':   'bg-[oklch(58%_0.14_195)] text-white border-transparent',
+  '3級':   'bg-[oklch(58%_0.14_240)] text-white border-transparent',
+  '準2級': 'bg-[oklch(58%_0.14_275)] text-white border-transparent',
+  '2級':   'bg-[oklch(58%_0.14_60)]  text-white border-transparent',
+  '準1級': 'bg-[oklch(58%_0.14_30)]  text-white border-transparent',
+  '1級':   'bg-[oklch(58%_0.14_10)]  text-white border-transparent',
 }
 
 export function LevelFilter() {
@@ -33,7 +35,7 @@ export function LevelFilter() {
 
   return (
     <div className="space-y-2">
-      <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
+      <div className="text-xs font-semibold text-stone-400 uppercase tracking-wider">
         {t(locale, 'selectLevel')}
       </div>
       <div className="flex flex-wrap gap-1.5">
@@ -41,8 +43,8 @@ export function LevelFilter() {
           onClick={() => setSelectedLevels([])}
           className={`px-2.5 py-1 rounded-full text-xs font-medium border transition-colors ${
             allSelected
-              ? 'bg-gray-700 text-white border-gray-700'
-              : 'bg-gray-100 text-gray-600 border-gray-200 hover:border-gray-400'
+              ? 'bg-stone-800 text-white border-stone-800'
+              : 'bg-stone-100 text-stone-700 border-transparent hover:bg-stone-200'
           }`}
         >
           {t(locale, 'allLevels')}
@@ -55,8 +57,8 @@ export function LevelFilter() {
               onClick={() => toggleLevel(level)}
               className={`px-2.5 py-1 rounded-full text-xs font-medium border transition-colors ${
                 active
-                  ? (LEVEL_COLORS_ACTIVE[level] ?? 'bg-gray-500 text-white border-gray-500')
-                  : (LEVEL_COLORS[level] ?? 'bg-gray-100 text-gray-600 border-gray-200 hover:border-gray-400')
+                  ? (LEVEL_COLORS_ACTIVE[level] ?? 'bg-stone-500 text-white border-gray-500')
+                  : (LEVEL_COLORS[level] ?? 'bg-stone-100 text-stone-600 border-stone-200 hover:border-stone-400')
               }`}
             >
               {level}

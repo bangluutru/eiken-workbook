@@ -44,7 +44,7 @@ export const pdfStyles = StyleSheet.create({
   },
   pos: {
     fontSize: 9,
-    color: '#9ca3af',
+    color: '#a8a29e',
     fontStyle: 'italic',
   },
   meaningArea: {
@@ -59,14 +59,14 @@ export const pdfStyles = StyleSheet.create({
   },
   viText: {
     fontSize: 9,
-    color: '#6b7280',
+    color: '#78716c',
     textAlign: 'right',
   },
   exampleBlock: {
     marginBottom: 8,
     paddingLeft: 8,
     borderLeftWidth: 2,
-    borderLeftColor: '#bfdbfe',
+    borderLeftColor: '#c7d2fe',
     borderLeftStyle: 'solid',
   },
   exampleText: {
@@ -77,17 +77,17 @@ export const pdfStyles = StyleSheet.create({
   },
   exampleTranslation: {
     fontSize: 8,
-    color: '#9ca3af',
+    color: '#a8a29e',
     marginBottom: 1,
   },
   reading: {
     fontSize: 9,
-    color: '#3b82f6',
+    color: '#6366f1',
     marginLeft: 4,
   },
   meaningEn: {
     fontSize: 9,
-    color: '#9ca3af',
+    color: '#a8a29e',
     textAlign: 'right',
   },
   traceText: {
@@ -102,22 +102,22 @@ export const pdfStyles = StyleSheet.create({
   },
   topLine: {
     borderTopWidth: 0.75,
-    borderTopColor: '#9ca3af',
+    borderTopColor: '#a8a29e',
     borderTopStyle: 'solid',
   },
   midLine: {
     borderTopWidth: 0.5,
-    borderTopColor: '#d1d5db',
+    borderTopColor: '#d6d3d1',
     borderTopStyle: 'dashed',
   },
   baseLine: {
     borderTopWidth: 0.75,
-    borderTopColor: '#9ca3af',
+    borderTopColor: '#a8a29e',
     borderTopStyle: 'solid',
   },
   bottomLine: {
     borderTopWidth: 0.5,
-    borderTopColor: '#d1d5db',
+    borderTopColor: '#d6d3d1',
     borderTopStyle: 'solid',
   },
   recallSection: {
@@ -129,12 +129,12 @@ export const pdfStyles = StyleSheet.create({
   },
   recallLabel: {
     fontSize: 8,
-    color: '#9ca3af',
+    color: '#a8a29e',
     marginBottom: 4,
   },
   recallLine: {
     borderBottomWidth: 0.75,
-    borderBottomColor: '#6b7280',
+    borderBottomColor: '#78716c',
     borderBottomStyle: 'solid',
     width: '100%',
     marginBottom: 4,

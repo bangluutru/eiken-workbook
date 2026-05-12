@@ -19,7 +19,7 @@ export function WorksheetPreview() {
 
   if (selectedVocabulary.length === 0) {
     return (
-      <div className="flex items-center justify-center h-64 text-gray-400 text-sm">
+      <div className="flex items-center justify-center h-64 text-stone-400 text-sm">
         {t(locale, 'noPreview')}
       </div>
     )
@@ -45,7 +45,7 @@ export function WorksheetPreview() {
       {pages.map((pageVocab, pageIdx) => (
         <div
           key={pageIdx}
-          className="bg-white shadow-md border border-gray-200 flex-shrink-0 relative"
+          className="bg-white border border-stone-200 flex-shrink-0 relative"
           style={{
             width: `${pageW}mm`,
             height: `${pageH}mm`,
@@ -55,10 +55,11 @@ export function WorksheetPreview() {
             paddingLeft: PAGE_PADDING.x,
             paddingRight: PAGE_PADDING.x,
             boxSizing: 'border-box',
+            boxShadow: '0 1px 3px rgb(0 0 0 / 0.05), 0 8px 24px -4px rgb(0 0 0 / 0.08)',
           }}
         >
           <div
-            className="absolute top-2 right-3 font-mono text-gray-300"
+            className="absolute top-2 right-3 font-mono text-stone-300"
             style={{ fontSize: '8pt' }}
           >
             {pageIdx + 1} / {pages.length}

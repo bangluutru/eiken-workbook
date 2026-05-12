@@ -41,7 +41,7 @@ export function CsvImport() {
 
   return (
     <div className="space-y-2">
-      <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
+      <div className="text-xs font-semibold text-stone-400 uppercase tracking-wider">
         {t(locale, 'importCsv')}
       </div>
 
@@ -52,12 +52,12 @@ export function CsvImport() {
         onClick={() => fileRef.current?.click()}
         className={`border-2 border-dashed rounded-lg p-4 text-center cursor-pointer transition-colors ${
           dragging
-            ? 'border-blue-400 bg-blue-50'
-            : 'border-gray-200 hover:border-blue-300 hover:bg-gray-50'
+            ? 'border-indigo-400 bg-indigo-50'
+            : 'border-stone-200 hover:border-indigo-300 hover:bg-stone-50'
         }`}
       >
-        <Upload className="w-5 h-5 text-gray-400 mx-auto mb-1" />
-        <p className="text-xs text-gray-500">{t(locale, 'dropCsvHere')}</p>
+        <Upload className="w-5 h-5 text-stone-400 mx-auto mb-1" />
+        <p className="text-xs text-stone-500">{t(locale, 'dropCsvHere')}</p>
       </div>
 
       <input
@@ -68,7 +68,7 @@ export function CsvImport() {
         className="hidden"
       />
 
-      <p className="text-xs text-gray-400">{t(locale, 'csvFormatHint')}</p>
+      <p className="text-xs text-stone-400">{t(locale, 'csvFormatHint')}</p>
 
       {result && (
         <div className="space-y-1">
@@ -83,7 +83,7 @@ export function CsvImport() {
                 {result.errors.length} {t(locale, 'importErrors')}
               </div>
               {result.errors.map((err, i) => (
-                <div key={i} className="text-xs text-gray-500 pl-5">
+                <div key={i} className="text-xs text-stone-500 pl-5">
                   Row {err.row}: {err.message}
                 </div>
               ))}
