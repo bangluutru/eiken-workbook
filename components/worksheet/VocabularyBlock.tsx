@@ -100,10 +100,11 @@ export function VocabularyBlock({ vocabulary: vocab, settings: s, index }: Props
 
       {/* Trace line */}
       <div
-        className="mb-2 font-mono tracking-widest overflow-hidden whitespace-nowrap"
+        className="mb-2 tracking-widest overflow-hidden whitespace-nowrap"
         style={{
           fontSize: Math.round(14 * s.fontScale),
           color: `rgba(100,100,100,${s.traceOpacity})`,
+          fontFamily: s.fontFamily !== 'Helvetica' ? `'${s.fontFamily}', sans-serif` : 'inherit',
           textDecoration:
             s.traceStyle !== 'solid'
               ? `underline ${getTraceBorderStyle(s.traceStyle)}`

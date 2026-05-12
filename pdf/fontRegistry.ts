@@ -36,28 +36,32 @@ export function getBoldFontStyle(font: PdfFontFamily): { fontFamily: string; fon
   return { fontFamily: getBodyFont(font) }
 }
 
-let fontsRegistered = false
+let registeredOrigin: string | null = null
 
-export function registerFonts() {
-  if (fontsRegistered) return
-  fontsRegistered = true
+export function registerFonts(origin = '') {
+  // Re-register if the origin changed (e.g. dev vs prod)
+  if (registeredOrigin === origin) return
+  registeredOrigin = origin
 
-  Font.register({ family: 'HocTro', src: '/fonts/HLHOCTRO.TTF' })
+  const base = origin.replace(/\/$/, '')
+  const url = (path: string) => `${base}${path}`
+
+  Font.register({ family: 'HocTro', src: url('/fonts/HLHOCTRO.TTF') })
   Font.register({
     family: 'HP001-4hang',
     fonts: [
-      { src: '/fonts/HP001_4_hang_normal.ttf', fontWeight: 'normal' },
-      { src: '/fonts/HP001_4_hang_bold.ttf', fontWeight: 'bold' },
+      { src: url('/fonts/HP001_4_hang_normal.ttf'), fontWeight: 'normal' },
+      { src: url('/fonts/HP001_4_hang_bold.ttf'), fontWeight: 'bold' },
     ],
   })
-  Font.register({ family: 'HP001-4hang-1oly', src: '/fonts/HP001_4_hang_1_o_ly.ttf' })
-  Font.register({ family: 'HP001-4hang-2oly', src: '/fonts/HP001_4_hang_2_o_ly.ttf' })
+  Font.register({ family: 'HP001-4hang-1oly', src: url('/fonts/HP001_4_hang_1_o_ly.ttf') })
+  Font.register({ family: 'HP001-4hang-2oly', src: url('/fonts/HP001_4_hang_2_o_ly.ttf') })
   Font.register({
     family: 'HP001-5hang',
     fonts: [
-      { src: '/fonts/HP001_5_hang_normal.ttf', fontWeight: 'normal' },
-      { src: '/fonts/HP001_5_hang_bold.ttf', fontWeight: 'bold' },
+      { src: url('/fonts/HP001_5_hang_normal.ttf'), fontWeight: 'normal' },
+      { src: url('/fonts/HP001_5_hang_bold.ttf'), fontWeight: 'bold' },
     ],
   })
-  Font.register({ family: 'HP001-5hang-1oly', src: '/fonts/HP001_5_hang_1_o_ly.ttf' })
+  Font.register({ family: 'HP001-5hang-1oly', src: url('/fonts/HP001_5_hang_1_o_ly.ttf') })
 }
