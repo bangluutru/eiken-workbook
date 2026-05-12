@@ -3,6 +3,7 @@ import type { Vocabulary } from '@/types/vocabulary'
 import type { WorksheetSettings } from '@/types/worksheet'
 import { pdfStyles } from './pdfStyles'
 import { VocabularyBlockPdf } from './VocabularyBlockPdf'
+import { getBodyFont } from './fontRegistry'
 
 type Props = {
   vocabulary: Vocabulary[]
@@ -34,7 +35,7 @@ export function WorksheetDocument({ vocabulary, settings }: Props) {
           key={pageIdx}
           size={size}
           orientation={settings.orientation}
-          style={pdfStyles.page}
+          style={[pdfStyles.page, { fontFamily: getBodyFont(settings.fontFamily) }]}
         >
           <View>
             {pageVocab.map((vocab, i) => (

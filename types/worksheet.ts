@@ -1,4 +1,5 @@
 import type { Vocabulary } from './vocabulary'
+import type { PdfFontFamily } from '@/pdf/fontRegistry'
 
 export type TraceStyle = 'solid' | 'dotted' | 'dashed'
 
@@ -16,7 +17,10 @@ export type WorksheetSettings = {
   showExampleJapanese: boolean
   showExampleVietnamese: boolean
   showRecall: boolean
+  showReading: boolean
+  showMeaningEn: boolean
   fontScale: number
+  fontFamily: PdfFontFamily
 }
 
 export type WorksheetBlock = {
@@ -38,5 +42,8 @@ export const DEFAULT_SETTINGS: WorksheetSettings = {
   showExampleJapanese: true,
   showExampleVietnamese: true,
   showRecall: true,
+  showReading: true,
+  showMeaningEn: false,
   fontScale: 1,
+  fontFamily: 'Helvetica',
 }

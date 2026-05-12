@@ -43,6 +43,14 @@ export function VocabularyBlock({ vocabulary: vocab, settings: s, index }: Props
           >
             {index}. {vocab.word}
           </span>
+          {s.showReading && vocab.reading && (
+            <span
+              className="text-blue-500 font-normal"
+              style={{ fontSize: smallFontSize }}
+            >
+              /{vocab.reading}/
+            </span>
+          )}
           {s.showPartOfSpeech && vocab.pos && (
             <span
               className="text-gray-500 italic"
@@ -53,6 +61,11 @@ export function VocabularyBlock({ vocabulary: vocab, settings: s, index }: Props
           )}
         </div>
         <div className="text-right shrink-0">
+          {s.showMeaningEn && vocab.meaningEn && (
+            <div className="text-gray-500 font-medium" style={{ fontSize: smallFontSize }}>
+              {vocab.meaningEn}
+            </div>
+          )}
           {s.showJapanese && vocab.japanese && (
             <div className="text-gray-700 font-medium" style={{ fontSize: smallFontSize }}>
               {vocab.japanese}

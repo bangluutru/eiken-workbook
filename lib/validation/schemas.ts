@@ -18,6 +18,8 @@ export const VocabularySchema = z.object({
   pos: z.string().optional(),
   japanese: z.string().optional(),
   vietnamese: z.string().optional(),
+  meaningEn: z.string().optional(),
+  reading: z.string().optional(),
   example: z.string().optional(),
   exampleJa: z.string().optional(),
   exampleVi: z.string().optional(),
@@ -51,5 +53,8 @@ export const WorksheetSettingsSchema = z.object({
   showExampleJapanese: z.boolean(),
   showExampleVietnamese: z.boolean(),
   showRecall: z.boolean(),
+  showReading: z.boolean().optional(),
+  showMeaningEn: z.boolean().optional(),
   fontScale: z.number().min(0.5).max(2),
+  fontFamily: z.string().optional(),
 })

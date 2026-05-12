@@ -63,6 +63,9 @@ type Dictionary = {
   dropCsvHere: string
   csvFormatHint: string
   fontScale: string
+  fontFamily: string
+  showReading: string
+  showMeaningEn: string
   noPreview: string
   loading: string
 }
@@ -130,6 +133,9 @@ const ja: Dictionary = {
   dropCsvHere: 'CSVファイルをドロップするか、クリックして選択',
   csvFormatHint: '形式: word,japanese,vietnamese,level,pos,example,exampleJa,exampleVi',
   fontScale: '文字サイズ',
+  fontFamily: 'フォント',
+  showReading: '発音記号（IPA）を表示',
+  showMeaningEn: '英語の意味を表示',
   noPreview: 'プレビューする単語を選択してください',
   loading: '読み込み中...',
 }
@@ -197,6 +203,9 @@ const vi: Dictionary = {
   dropCsvHere: 'Kéo thả file CSV vào đây hoặc nhấp để chọn',
   csvFormatHint: 'Định dạng: word,japanese,vietnamese,level,pos,example,exampleJa,exampleVi',
   fontScale: 'Cỡ chữ',
+  fontFamily: 'Phông chữ',
+  showReading: 'Hiển thị phiên âm IPA',
+  showMeaningEn: 'Hiển thị nghĩa tiếng Anh',
   noPreview: 'Vui lòng chọn từ để xem trước',
   loading: 'Đang tải...',
 }
@@ -264,6 +273,9 @@ const en: Dictionary = {
   dropCsvHere: 'Drop CSV file here or click to select',
   csvFormatHint: 'Format: word,japanese,vietnamese,level,pos,example,exampleJa,exampleVi',
   fontScale: 'Font size',
+  fontFamily: 'Font',
+  showReading: 'Show IPA pronunciation',
+  showMeaningEn: 'Show English meaning',
   noPreview: 'Please select words to preview',
   loading: 'Loading...',
 }

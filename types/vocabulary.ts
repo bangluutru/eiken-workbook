@@ -28,6 +28,8 @@ export type Vocabulary = {
   pos?: string
   japanese?: string
   vietnamese?: string
+  meaningEn?: string
+  reading?: string
   example?: string
   exampleJa?: string
   exampleVi?: string

@@ -3,6 +3,7 @@
 import { useWorkbookStore } from '@/store/useWorkbookStore'
 import { t } from '@/lib/i18n/dictionaries'
 import type { WorksheetSettings, TraceStyle } from '@/types/worksheet'
+import { FONT_OPTIONS } from '@/pdf/fontRegistry'
 
 const WORDS_PER_PAGE_OPTIONS = ['auto', 1, 2, 3, 4, 5, 6, 8, 10] as const
 const TRACE_STYLES: TraceStyle[] = ['solid', 'dotted', 'dashed']
@@ -189,6 +190,24 @@ export function SettingsPanel() {
         </div>
       </section>
 
+      {/* Font family */}
+      <section>
+        <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
+          {t(locale, 'fontFamily')}
+        </h3>
+        <select
+          value={s.fontFamily}
+          onChange={(e) => update('fontFamily', e.target.value as WorksheetSettings['fontFamily'])}
+          className="w-full px-2.5 py-1.5 rounded border border-gray-200 text-sm text-gray-700 bg-white focus:outline-none focus:border-blue-400"
+        >
+          {FONT_OPTIONS.map((opt) => (
+            <option key={opt.value} value={opt.value}>
+              {opt.label}
+            </option>
+          ))}
+        </select>
+      </section>
+
       {/* Display toggles */}
       <section>
         <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">
@@ -235,6 +254,16 @@ export function SettingsPanel() {
             checked={s.showRecall}
             onChange={(v) => update('showRecall', v)}
             label={t(locale, 'showRecall')}
+          />
+          <Toggle
+            checked={s.showReading}
+            onChange={(v) => update('showReading', v)}
+            label={t(locale, 'showReading')}
+          />
+          <Toggle
+            checked={s.showMeaningEn}
+            onChange={(v) => update('showMeaningEn', v)}
+            label={t(locale, 'showMeaningEn')}
           />
         </div>
       </section>

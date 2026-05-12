@@ -5,6 +5,7 @@ import { pdf } from '@react-pdf/renderer'
 import { useWorkbookStore } from '@/store/useWorkbookStore'
 import { WorksheetDocument } from '@/pdf/WorksheetDocument'
 import { t } from '@/lib/i18n/dictionaries'
+import { registerFonts } from '@/pdf/fontRegistry'
 import { FileDown, Loader2 } from 'lucide-react'
 
 export function PdfDownloadButton() {
@@ -14,6 +15,7 @@ export function PdfDownloadButton() {
   async function handleDownload() {
     if (selectedVocabulary.length === 0) return
     setLoading(true)
+    registerFonts()
     try {
       const blob = await pdf(
         <WorksheetDocument vocabulary={selectedVocabulary} settings={settings} />

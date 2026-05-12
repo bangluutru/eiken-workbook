@@ -80,6 +80,16 @@ export const pdfStyles = StyleSheet.create({
     color: '#9ca3af',
     marginBottom: 1,
   },
+  reading: {
+    fontSize: 9,
+    color: '#3b82f6',
+    marginLeft: 4,
+  },
+  meaningEn: {
+    fontSize: 9,
+    color: '#9ca3af',
+    textAlign: 'right',
+  },
   traceText: {
     fontSize: 11,
     letterSpacing: 3,

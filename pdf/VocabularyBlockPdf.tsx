@@ -3,6 +3,7 @@ import type { Vocabulary } from '@/types/vocabulary'
 import type { WorksheetSettings } from '@/types/worksheet'
 import { pdfStyles } from './pdfStyles'
 import { WritingGridPdf } from './WritingGridPdf'
+import { getBoldFontStyle } from './fontRegistry'
 
 type Props = {
   vocabulary: Vocabulary
@@ -21,9 +22,14 @@ export function VocabularyBlockPdf({ vocabulary: vocab, settings: s, index }: Pr
       {/* Header */}
       <View style={pdfStyles.header}>
         <View style={pdfStyles.wordArea}>
-          <Text style={[pdfStyles.word, { fontSize: Math.round(13 * fs) }]}>
+          <Text style={[pdfStyles.word, { fontSize: Math.round(13 * fs), ...getBoldFontStyle(s.fontFamily) }]}>
             {index}. {vocab.word}
           </Text>
+          {s.showReading && vocab.reading && (
+            <Text style={[pdfStyles.reading, { fontSize: Math.round(9 * fs) }]}>
+              /{vocab.reading}/
+            </Text>
+          )}
           {s.showPartOfSpeech && vocab.pos && (
             <Text style={[pdfStyles.pos, { fontSize: Math.round(9 * fs) }]}>
               ({vocab.pos})
@@ -31,6 +37,11 @@ export function VocabularyBlockPdf({ vocabulary: vocab, settings: s, index }: Pr
           )}
         </View>
         <View style={pdfStyles.meaningArea}>
+          {s.showMeaningEn && vocab.meaningEn && (
+            <Text style={[pdfStyles.meaningEn, { fontSize: Math.round(9 * fs) }]}>
+              {vocab.meaningEn}
+            </Text>
+          )}
           {s.showJapanese && vocab.japanese && (
             <Text style={[pdfStyles.jaText, { fontSize: Math.round(9 * fs) }]}>
               {vocab.japanese}
