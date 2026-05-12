@@ -1,5 +1,46 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'HocTro';
+  src: url('/fonts/HLHOCTRO.TTF') format('truetype');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'HP001-4hang';
+  src: url('/fonts/HP001_4_hang_normal.ttf') format('truetype');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'HP001-4hang';
+  src: url('/fonts/HP001_4_hang_bold.ttf') format('truetype');
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'HP001-4hang-1oly';
+  src: url('/fonts/HP001_4_hang_1_o_ly.ttf') format('truetype');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'HP001-4hang-2oly';
+  src: url('/fonts/HP001_4_hang_2_o_ly.ttf') format('truetype');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'HP001-5hang';
+  src: url('/fonts/HP001_5_hang_normal.ttf') format('truetype');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'HP001-5hang';
+  src: url('/fonts/HP001_5_hang_bold.ttf') format('truetype');
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'HP001-5hang-1oly';
+  src: url('/fonts/HP001_5_hang_1_o_ly.ttf') format('truetype');
+  font-weight: normal;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

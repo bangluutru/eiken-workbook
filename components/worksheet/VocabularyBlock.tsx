@@ -32,7 +32,10 @@ export function VocabularyBlock({ vocabulary: vocab, settings: s, index }: Props
   return (
     <div
       className="border border-gray-200 rounded-lg p-4 bg-white break-inside-avoid"
-      style={{ pageBreakInside: 'avoid' }}
+      style={{
+        pageBreakInside: 'avoid',
+        fontFamily: s.fontFamily !== 'Helvetica' ? `'${s.fontFamily}', sans-serif` : undefined,
+      }}
     >
       {/* Header */}
       <div className="flex items-start justify-between gap-4 mb-2">

@@ -13,7 +13,6 @@ export const EIKEN_LEVELS: EikenLevel[] = [
   '4級',
   '3級',
   '準2級',
-  '準2級プラス',
   '2級',
   '準1級',
   '1級',

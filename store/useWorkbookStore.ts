@@ -20,6 +20,7 @@ type WorkbookState = {
   toggleLevel: (level: EikenLevel) => void
   addVocabulary: (items: Vocabulary[]) => void
   removeVocabulary: (id: string) => void
+  removeVocabularyBatch: (ids: string[]) => void
   updateVocabulary: (id: string, updates: Partial<Vocabulary>) => void
   clearVocabulary: () => void
   updateSettings: (updates: Partial<WorksheetSettings>) => void
@@ -67,6 +68,13 @@ export const useWorkbookStore = create<WorkbookState>()(
       removeVocabulary: (id) => {
         set((state) => ({
           selectedVocabulary: state.selectedVocabulary.filter((v) => v.id !== id),
+        }))
+      },
+
+      removeVocabularyBatch: (ids) => {
+        const idSet = new Set(ids)
+        set((state) => ({
+          selectedVocabulary: state.selectedVocabulary.filter((v) => !idSet.has(v.id)),
         }))
       },
 

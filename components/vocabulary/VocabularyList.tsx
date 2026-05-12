@@ -5,7 +5,9 @@ import { useWorkbookStore } from '@/store/useWorkbookStore'
 import { loadAllVocabulary } from '@/lib/vocabulary/loadVocabulary'
 import { filterByLevels, searchVocabulary, pickRandom } from '@/lib/vocabulary/searchVocabulary'
 import { t } from '@/lib/i18n/dictionaries'
-import { Search, Shuffle, CheckSquare, Square } from 'lucide-react'
+import { Search, Shuffle, CheckSquare, Square, XSquare } from 'lucide-react'
+
+const MAX_VISIBLE = 200
 
 export function VocabularyList() {
   const {
@@ -13,6 +15,7 @@ export function VocabularyList() {
     selectedLevels,
     selectedVocabulary,
     addVocabulary,
+    removeVocabularyBatch,
     searchQuery,
     setSearchQuery,
   } = useWorkbookStore()
@@ -25,10 +28,23 @@ export function VocabularyList() {
     return searchVocabulary(byLevel, searchQuery)
   }, [allVocab, selectedLevels, searchQuery])
 
-  const selectedIds = new Set(selectedVocabulary.map((v) => v.id))
+  const selectedIds = useMemo(
+    () => new Set(selectedVocabulary.map((v) => v.id)),
+    [selectedVocabulary]
+  )
 
-  function handleSelectAll() {
-    addVocabulary(filtered)
+  const allFilteredSelected =
+    filtered.length > 0 && filtered.every((v) => selectedIds.has(v.id))
+
+  const displayed = filtered.slice(0, MAX_VISIBLE)
+  const hiddenCount = filtered.length - displayed.length
+
+  function handleToggleAll() {
+    if (allFilteredSelected) {
+      removeVocabularyBatch(filtered.map((v) => v.id))
+    } else {
+      addVocabulary(filtered)
+    }
   }
 
   function handleRandom() {
@@ -63,11 +79,24 @@ export function VocabularyList() {
       {/* Actions */}
       <div className="flex items-center gap-2 mb-2">
         <button
-          onClick={handleSelectAll}
-          className="flex items-center gap-1 px-2 py-1 text-xs text-blue-600 border border-blue-200 rounded hover:bg-blue-50"
+          onClick={handleToggleAll}
+          className={`flex items-center gap-1 px-2 py-1 text-xs border rounded ${
+            allFilteredSelected
+              ? 'text-red-600 border-red-200 hover:bg-red-50'
+              : 'text-blue-600 border-blue-200 hover:bg-blue-50'
+          }`}
         >
-          <CheckSquare className="w-3 h-3" />
-          {t(locale, 'selectAll')}
+          {allFilteredSelected ? (
+            <>
+              <XSquare className="w-3 h-3" />
+              {locale === 'ja' ? '全選択解除' : locale === 'vi' ? 'Bỏ chọn tất cả' : 'Deselect all'}
+            </>
+          ) : (
+            <>
+              <CheckSquare className="w-3 h-3" />
+              {t(locale, 'selectAll')}
+            </>
+          )}
         </button>
         <div className="flex items-center gap-1 ml-auto">
           <button
@@ -111,7 +140,7 @@ export function VocabularyList() {
               : 'Please select a level'}
           </div>
         )}
-        {filtered.map((vocab) => {
+        {displayed.map((vocab) => {
           const isSelected = selectedIds.has(vocab.id)
           return (
             <button
@@ -136,7 +165,7 @@ export function VocabularyList() {
                   {vocab.pos && (
                     <span className="text-xs text-gray-400">{vocab.pos}</span>
                   )}
-                  {vocab.level.map((l) => (
+                  {vocab.level.filter((l) => l !== '準2級プラス').map((l) => (
                     <span
                       key={l}
                       className="text-xs px-1 py-0.5 bg-gray-100 text-gray-500 rounded"
@@ -155,6 +184,15 @@ export function VocabularyList() {
             </button>
           )
         })}
+        {hiddenCount > 0 && (
+          <div className="py-3 text-center text-xs text-gray-400">
+            {locale === 'ja'
+              ? `他 ${hiddenCount} 件 — 検索で絞り込んでください`
+              : locale === 'vi'
+              ? `Còn ${hiddenCount} từ — hãy tìm kiếm để lọc`
+              : `${hiddenCount} more — use search to filter`}
+          </div>
+        )}
       </div>
     </div>
   )
