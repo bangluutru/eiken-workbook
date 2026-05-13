@@ -198,12 +198,37 @@ export function SettingsPanel() {
           onChange={(e) => update('fontFamily', e.target.value as WorksheetSettings['fontFamily'])}
           className="w-full px-2.5 py-1.5 rounded border border-outline-variant text-sm text-on-surface bg-surface-container-lowest focus:outline-none focus:border-primary"
         >
-          {FONT_OPTIONS.map((opt) => (
-            <option key={opt.value} value={opt.value}>
-              {opt.label}
-            </option>
-          ))}
+          {(() => {
+            const groups = new Map<string, typeof FONT_OPTIONS>()
+            FONT_OPTIONS.forEach((opt) => {
+              const g = opt.group || 'Khác'
+              if (!groups.has(g)) groups.set(g, [])
+              groups.get(g)!.push(opt)
+            })
+            return Array.from(groups.entries()).map(([group, opts]) => (
+              <optgroup key={group} label={group}>
+                {opts.map((opt) => (
+                  <option key={opt.value} value={opt.value}>
+                    {opt.label}
+                  </option>
+                ))}
+              </optgroup>
+            ))
+          })()}
         </select>
+        {/* Font preview */}
+        {s.fontFamily !== 'Helvetica' && (
+          <div
+            className="mt-2 px-3 py-2 rounded bg-surface-container-lowest border border-outline-variant/50 text-on-surface"
+            style={{
+              fontFamily: `'${s.fontFamily}', sans-serif`,
+              fontSize: '16px',
+              lineHeight: '1.6',
+            }}
+          >
+            A B C D E a b c d e
+          </div>
+        )}
       </section>
 
       {/* Display toggles */}

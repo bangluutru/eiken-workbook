@@ -40,6 +40,51 @@
   src: url('/fonts/HP001_5_hang_1_o_ly.ttf') format('truetype');
   font-weight: normal;
 }
+@font-face {
+  font-family: 'HP001-4H';
+  src: url('/fonts/HP001_4H_normal.ttf') format('truetype');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'HP001-4H';
+  src: url('/fonts/HP001_4H_bold.ttf') format('truetype');
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'HP001-5H';
+  src: url('/fonts/HP001_5H_normal.ttf') format('truetype');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'HP001-5H';
+  src: url('/fonts/HP001_5H_bold.ttf') format('truetype');
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'HP001-TD-4H';
+  src: url('/fonts/HP001_TD_4H.ttf') format('truetype');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'HP001-b4h';
+  src: url('/fonts/HP001_b4h.ttf') format('truetype');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'HP001-b5h';
+  src: url('/fonts/HP001_b5h.ttf') format('truetype');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'HP001-n4h';
+  src: url('/fonts/HP001_n4h.ttf') format('truetype');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'HP001-n5h';
+  src: url('/fonts/HP001_n5h.ttf') format('truetype');
+  font-weight: normal;
+}
 
 /* Material Design 3 color system */
 @theme {
