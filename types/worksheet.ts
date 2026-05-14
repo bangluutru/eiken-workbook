@@ -32,7 +32,7 @@ export const DEFAULT_SETTINGS: WorksheetSettings = {
   paperSize: 'A4',
   orientation: 'portrait',
   wordsPerPage: 3,
-  writingLines: 5,
+  writingLines: 1,
   traceStyle: 'dotted',
   traceOpacity: 0.25,
   showJapanese: true,

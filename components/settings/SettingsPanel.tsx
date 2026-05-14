@@ -4,7 +4,7 @@ import { useWorkbookStore } from '@/store/useWorkbookStore'
 import { t } from '@/lib/i18n/dictionaries'
 import type { WorksheetSettings, TraceStyle } from '@/types/worksheet'
 import { FONT_OPTIONS } from '@/pdf/fontRegistry'
-import { computeWritingLines } from '@/lib/worksheet/computeWritingLines'
+
 
 const WORDS_PER_PAGE_OPTIONS = ['auto', 1, 2, 3, 4, 5, 6, 8, 10] as const
 const TRACE_STYLES: TraceStyle[] = ['solid', 'dotted', 'dashed']
@@ -116,21 +116,7 @@ export function SettingsPanel() {
         </div>
       </section>
 
-      {/* Writing lines — auto-computed from wordsPerPage */}
-      <section>
-        <h3 className="text-xs font-semibold text-on-surface-variant/70 uppercase tracking-wider mb-1">
-          {t(locale, 'writingLines')}
-        </h3>
-        <p className="text-sm text-on-surface-variant">
-          {t(locale, 'auto')}{' '}
-          <span className="font-medium text-primary">
-            {computeWritingLines(s)} {t(locale, 'writingLines').toLowerCase()}
-          </span>
-        </p>
-        <p className="text-xs text-stone-400 mt-0.5">
-          {t(locale, 'writingLinesAutoHint')}
-        </p>
-      </section>
+
 
       {/* Trace style */}
       <section>

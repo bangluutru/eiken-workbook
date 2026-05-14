@@ -2,17 +2,17 @@ import { StyleSheet } from '@react-pdf/renderer'
 
 export const pdfStyles = StyleSheet.create({
   page: {
-    paddingTop: 30,
-    paddingBottom: 30,
-    paddingLeft: 42,
-    paddingRight: 42,
+    paddingTop: 56.69,
+    paddingBottom: 56.69,
+    paddingLeft: 56.69,
+    paddingRight: 56.69,
     fontFamily: 'Helvetica',
     backgroundColor: '#ffffff',
   },
   pageNumber: {
     position: 'absolute',
-    bottom: 15,
-    right: 42,
+    bottom: 30,
+    right: 56.69,
     fontSize: 8,
     color: '#cccccc',
   },
@@ -101,23 +101,23 @@ export const pdfStyles = StyleSheet.create({
     marginBottom: 0,
   },
   topLine: {
-    borderTopWidth: 0.75,
-    borderTopColor: '#a8a29e',
+    borderTopWidth: 1,
+    borderTopColor: '#78716c',
     borderTopStyle: 'solid',
   },
   midLine: {
     borderTopWidth: 0.5,
-    borderTopColor: '#d6d3d1',
+    borderTopColor: '#a8a29e',
     borderTopStyle: 'dashed',
   },
   baseLine: {
     borderTopWidth: 0.75,
-    borderTopColor: '#a8a29e',
+    borderTopColor: '#e85d3a',
     borderTopStyle: 'solid',
   },
   bottomLine: {
-    borderTopWidth: 0.5,
-    borderTopColor: '#d6d3d1',
+    borderTopWidth: 1,
+    borderTopColor: '#78716c',
     borderTopStyle: 'solid',
   },
   recallSection: {

@@ -11,8 +11,8 @@ const PAGE_DIMS = {
   Letter: { w: 216, h: 279 },
 }
 
-// Padding matching @react-pdf/renderer pdfStyles.page (42pt ≈ 14.8mm, 30pt ≈ 10.6mm)
-const PAGE_PADDING = { x: '14.8mm', y: '10.6mm' }
+// Padding matching @react-pdf/renderer pdfStyles.page (56.69pt = 20mm = 2cm)
+const PAGE_PADDING = { x: '20mm', y: '20mm' }
 
 export function WorksheetPreview() {
   const { locale, selectedVocabulary, settings } = useWorkbookStore()

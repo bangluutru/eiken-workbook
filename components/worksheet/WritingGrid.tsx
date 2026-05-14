@@ -19,20 +19,26 @@ export function WritingGrid({ lines, settings }: Props) {
           className="relative w-full"
           style={{ height: rowHeight }}
         >
-          {/* Top line */}
-          <div className="absolute top-0 left-0 right-0 border-t border-stone-400" />
-          {/* Upper midline (dashed) */}
+          {/* Top line — bold solid dark */}
           <div
-            className="absolute left-0 right-0 border-t border-dashed border-stone-300"
-            style={{ top: '30%' }}
+            className="absolute top-0 left-0 right-0"
+            style={{ borderTop: '1.5px solid #78716c' }}
           />
-          {/* Baseline */}
+          {/* Upper midline — dashed gray */}
           <div
-            className="absolute left-0 right-0 border-t border-stone-400"
-            style={{ top: '65%' }}
+            className="absolute left-0 right-0"
+            style={{ top: '30%', borderTop: '1px dashed #a8a29e' }}
           />
-          {/* Bottom line */}
-          <div className="absolute bottom-0 left-0 right-0 border-t border-stone-300" />
+          {/* Baseline — solid orange */}
+          <div
+            className="absolute left-0 right-0"
+            style={{ top: '65%', borderTop: '1px solid #e85d3a' }}
+          />
+          {/* Bottom line — bold solid dark */}
+          <div
+            className="absolute bottom-0 left-0 right-0"
+            style={{ borderTop: '1.5px solid #78716c' }}
+          />
         </div>
       ))}
     </div>
