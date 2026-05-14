@@ -35,7 +35,7 @@ export function VocabularyBlock({ vocabulary: vocab, settings: s, index, lines }
       className="border border-stone-200 rounded-xl p-5 bg-white break-inside-avoid"
       style={{
         pageBreakInside: 'avoid',
-        fontFamily: s.fontFamily !== 'Helvetica' ? `'${s.fontFamily}', sans-serif` : undefined,
+        fontFamily: s.fontFamily === 'Helvetica' ? undefined : s.fontFamily === 'Times-Roman' ? "'Times New Roman', Times, serif" : `'${s.fontFamily}', cursive`,
       }}
     >
       {/* Header */}
@@ -105,7 +105,7 @@ export function VocabularyBlock({ vocabulary: vocab, settings: s, index, lines }
         style={{
           fontSize: Math.round(14 * s.fontScale),
           color: `rgba(100,100,100,${s.traceOpacity})`,
-          fontFamily: s.fontFamily !== 'Helvetica' ? `'${s.fontFamily}', sans-serif` : 'inherit',
+          fontFamily: s.fontFamily === 'Helvetica' ? 'inherit' : s.fontFamily === 'Times-Roman' ? "'Times New Roman', Times, serif" : `'${s.fontFamily}', cursive`,
           textDecoration:
             s.traceStyle !== 'solid'
               ? `underline ${getTraceBorderStyle(s.traceStyle)}`
