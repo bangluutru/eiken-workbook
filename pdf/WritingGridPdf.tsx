@@ -9,9 +9,56 @@ type Props = {
   fontFamily?: string
 }
 
-export function WritingGridPdf({ lines, fontSize, traceText, traceOpacity = 0.25, fontFamily }: Props) {
+/** Detect whether the selected font is a "Playwrite Guides" font. */
+function isGuidesFont(fontFamily: string): boolean {
+  return fontFamily.includes('Guides')
+}
+
+export function WritingGridPdf({ lines, fontSize, traceText, traceOpacity = 0.25, fontFamily = 'Helvetica' }: Props) {
   // PDF points: fontSize is in px, convert to pt-ish scale for PDF (roughly 1:0.75)
   const pdfFontSize = fontSize * 0.75
+
+  // ─── MODE 1: Playwrite Guides font — use font's built-in guide lines ───
+  if (isGuidesFont(fontFamily)) {
+    const underscoreRow = '_'.repeat(100)
+
+    const baseTextStyle = {
+      fontFamily,
+      fontSize: pdfFontSize,
+    }
+
+    return (
+      <View>
+        {/* Trace row — font renders guide lines behind the text */}
+        {traceText && (
+          <Text
+            style={{
+              ...baseTextStyle,
+              color: `rgba(100,100,100,${traceOpacity})`,
+              letterSpacing: 3,
+            }}
+          >
+            {traceText}
+          </Text>
+        )}
+
+        {/* Practice rows — underscores render blank guide lines */}
+        {Array.from({ length: lines }).map((_, i) => (
+          <Text
+            key={i}
+            style={{
+              ...baseTextStyle,
+              color: 'rgba(150,150,150,0.25)',
+            }}
+          >
+            {underscoreRow}
+          </Text>
+        ))}
+      </View>
+    )
+  }
+
+  // ─── MODE 2: Non-Guides fonts — CSS-drawn guide lines ───
   const rowHeight = pdfFontSize * 3
   const midPoint = Math.round(rowHeight * 0.3)
   const baseLine = Math.round(rowHeight * 0.65)
