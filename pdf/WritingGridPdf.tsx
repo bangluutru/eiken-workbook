@@ -44,15 +44,40 @@ export function WritingGridPdf({ lines, fontSize, traceText, traceOpacity = 0.25
 
         {/* Practice rows — underscores render blank guide lines */}
         {Array.from({ length: lines }).map((_, i) => (
-          <Text
-            key={i}
-            style={{
-              ...baseTextStyle,
-              color: 'rgba(150,150,150,0.25)',
-            }}
-          >
-            {underscoreRow}
-          </Text>
+          <View key={i} style={{ position: 'relative' }}>
+            <Text
+              style={{
+                ...baseTextStyle,
+                color: 'rgba(150,150,150,0.25)',
+              }}
+            >
+              {underscoreRow}
+            </Text>
+            {/* Top dark overlay line */}
+            <View
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                borderTopWidth: 1,
+                borderTopColor: '#333333',
+                borderTopStyle: 'solid',
+              }}
+            />
+            {/* Bottom dark overlay line */}
+            <View
+              style={{
+                position: 'absolute',
+                bottom: 0,
+                left: 0,
+                right: 0,
+                borderBottomWidth: 1,
+                borderBottomColor: '#333333',
+                borderBottomStyle: 'solid',
+              }}
+            />
+          </View>
         ))}
       </View>
     )
@@ -60,6 +85,7 @@ export function WritingGridPdf({ lines, fontSize, traceText, traceOpacity = 0.25
 
   // ─── MODE 2: Non-Guides fonts — CSS-drawn guide lines ───
   const rowHeight = pdfFontSize * 3
+  const gapHeight = rowHeight * 0.5
   const midPoint = Math.round(rowHeight * 0.3)
   const baseLine = Math.round(rowHeight * 0.65)
 
@@ -95,6 +121,9 @@ export function WritingGridPdf({ lines, fontSize, traceText, traceOpacity = 0.25
           </Text>
         </View>
       )}
+
+      {/* Gap between trace row and practice rows */}
+      {traceText && <View style={{ height: gapHeight }} />}
 
       {/* Practice rows */}
       {Array.from({ length: lines }).map((_, i) => (

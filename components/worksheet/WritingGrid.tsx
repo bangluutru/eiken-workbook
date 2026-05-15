@@ -77,12 +77,36 @@ export function WritingGrid({ lines, settings, traceText }: Props) {
         {rows.map((_, i) => (
           <div
             key={i}
-            style={{
-              ...baseStyle,
-              color: 'rgba(150,150,150,0.25)',
-            }}
+            style={{ position: 'relative' }}
           >
-            {underscoreRow}
+            <div
+              style={{
+                ...baseStyle,
+                color: 'rgba(150,150,150,0.25)',
+              }}
+            >
+              {underscoreRow}
+            </div>
+            {/* Top dark overlay line — solid black for clear writing boundary */}
+            <div
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                borderTop: '1.5px solid #333',
+              }}
+            />
+            {/* Bottom dark overlay line — solid black for clear writing boundary */}
+            <div
+              style={{
+                position: 'absolute',
+                bottom: 0,
+                left: 0,
+                right: 0,
+                borderBottom: '1.5px solid #333',
+              }}
+            />
           </div>
         ))}
       </div>
@@ -93,6 +117,7 @@ export function WritingGrid({ lines, settings, traceText }: Props) {
   // MODE 2: Non-Guides fonts — CSS-drawn guide lines
   // ─────────────────────────────────────────────────────
   const rowHeight = fontSize * 3
+  const gapHeight = rowHeight * 0.5
 
   return (
     <div className="space-y-0">
@@ -141,6 +166,9 @@ export function WritingGrid({ lines, settings, traceText }: Props) {
           </div>
         </div>
       )}
+
+      {/* Gap between trace row and practice rows */}
+      {traceText && <div style={{ height: gapHeight }} />}
 
       {/* Practice rows — empty guide lines for handwriting */}
       {rows.map((_, i) => (
