@@ -19,7 +19,7 @@ export type WorksheetSettings = {
   showRecall: boolean
   showReading: boolean
   showMeaningEn: boolean
-  fontScale: number
+  fontSize: number
   fontFamily: PdfFontFamily
 }
 
@@ -44,6 +44,6 @@ export const DEFAULT_SETTINGS: WorksheetSettings = {
   showRecall: true,
   showReading: true,
   showMeaningEn: false,
-  fontScale: 1,
+  fontSize: 16,
   fontFamily: 'Helvetica',
 }

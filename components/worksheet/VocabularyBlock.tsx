@@ -11,20 +11,9 @@ type Props = {
   lines: number
 }
 
-function getTraceBorderStyle(style: string): string {
-  switch (style) {
-    case 'dotted':
-      return 'dotted'
-    case 'dashed':
-      return 'dashed'
-    default:
-      return 'solid'
-  }
-}
-
 export function VocabularyBlock({ vocabulary: vocab, settings: s, index, lines }: Props) {
-  const fontSize = Math.round(16 * s.fontScale)
-  const smallFontSize = Math.round(12 * s.fontScale)
+  const fontSize = s.fontSize || 16
+  const smallFontSize = Math.round(fontSize * 0.75)
 
   const traceText = Array(Math.ceil(40 / (vocab.word.length + 2)))
     .fill(vocab.word)
@@ -99,25 +88,8 @@ export function VocabularyBlock({ vocabulary: vocab, settings: s, index, lines }
         </div>
       )}
 
-      {/* Trace line */}
-      <div
-        className="mb-2 tracking-widest overflow-hidden whitespace-nowrap"
-        style={{
-          fontSize: Math.round(14 * s.fontScale),
-          color: `rgba(100,100,100,${s.traceOpacity})`,
-          fontFamily: s.fontFamily === 'Helvetica' ? 'inherit' : s.fontFamily === 'Times-Roman' ? "'Times New Roman', Times, serif" : `'${s.fontFamily}', cursive`,
-          textDecoration:
-            s.traceStyle !== 'solid'
-              ? `underline ${getTraceBorderStyle(s.traceStyle)}`
-              : 'none',
-          letterSpacing: '0.15em',
-        }}
-      >
-        {traceText}
-      </div>
-
-      {/* Writing grid */}
-      <WritingGrid lines={lines} settings={s} />
+      {/* Writing grid with integrated trace text */}
+      <WritingGrid lines={lines} settings={s} traceText={traceText} />
 
       {/* Recall test */}
       {s.showRecall && (vocab.japanese || vocab.vietnamese) && (
@@ -129,7 +101,7 @@ export function VocabularyBlock({ vocabulary: vocab, settings: s, index, lines }
               ? `${vocab.vietnamese} →`
               : '→'}
           </div>
-          <div className="border-b border-stone-400 w-full" style={{ height: Math.round(32 * s.fontScale) }} />
+          <div className="border-b border-stone-400 w-full" style={{ height: Math.round(fontSize * 2) }} />
         </div>
       )}
     </div>

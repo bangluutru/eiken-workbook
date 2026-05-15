@@ -98,11 +98,24 @@ export const useWorkbookStore = create<WorkbookState>()(
     }),
     {
       name: 'eiken-workbook-store',
+      version: 1,
       partialize: (state) => ({
         locale: state.locale,
         settings: state.settings,
         selectedLevels: state.selectedLevels,
       }),
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      migrate: (persisted: any, version: number) => {
+        if (version === 0 && persisted?.settings) {
+          // Migrate fontScale (multiplier 0.5-1.5) → fontSize (px 8-24)
+          if ('fontScale' in persisted.settings && !('fontSize' in persisted.settings)) {
+            const scale = persisted.settings.fontScale as number
+            persisted.settings.fontSize = Math.round(Math.max(8, Math.min(24, 16 * scale)))
+            delete persisted.settings.fontScale
+          }
+        }
+        return persisted as WorkbookState
+      },
     }
   )
 )

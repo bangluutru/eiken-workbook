@@ -155,22 +155,24 @@ export function SettingsPanel() {
         />
       </section>
 
-      {/* Font scale */}
+      {/* Font size (px) */}
       <section>
         <h3 className="text-xs font-semibold text-on-surface-variant/70 uppercase tracking-wider mb-2">
-          {t(locale, 'fontScale')}: {s.fontScale.toFixed(1)}x
+          {t(locale, 'fontScale')}: {s.fontSize || 16}px
         </h3>
         <input
           type="range"
-          min={50}
-          max={150}
-          value={Math.round(s.fontScale * 100)}
-          onChange={(e) => update('fontScale', Number(e.target.value) / 100)}
+          min={8}
+          max={24}
+          step={1}
+          value={s.fontSize || 16}
+          onChange={(e) => update('fontSize', Number(e.target.value))}
           className="w-full accent-primary"
         />
         <div className="flex justify-between text-xs text-stone-400 mt-1">
-          <span>0.5x</span>
-          <span>1.5x</span>
+          <span>8px</span>
+          <span>16px</span>
+          <span>24px</span>
         </div>
       </section>
 

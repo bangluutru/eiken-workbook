@@ -1,18 +1,55 @@
-import { View } from '@react-pdf/renderer'
+import { View, Text } from '@react-pdf/renderer'
 import { pdfStyles } from './pdfStyles'
 
 type Props = {
   lines: number
-  fontScale: number
+  fontSize: number
+  traceText?: string
+  traceOpacity?: number
+  fontFamily?: string
 }
 
-export function WritingGridPdf({ lines, fontScale }: Props) {
-  const rowHeight = 20 * fontScale
+export function WritingGridPdf({ lines, fontSize, traceText, traceOpacity = 0.25, fontFamily }: Props) {
+  // PDF points: fontSize is in px, convert to pt-ish scale for PDF (roughly 1:0.75)
+  const pdfFontSize = fontSize * 0.75
+  const rowHeight = pdfFontSize * 3
   const midPoint = Math.round(rowHeight * 0.3)
   const baseLine = Math.round(rowHeight * 0.65)
 
   return (
     <View>
+      {/* Trace row — guide lines + faded text */}
+      {traceText && (
+        <View style={{ height: rowHeight, position: 'relative' }}>
+          <View style={[pdfStyles.topLine, { height: 0 }]} />
+          <View style={[pdfStyles.midLine, { height: 0, marginTop: midPoint }]} />
+          <View style={[pdfStyles.baseLine, { height: 0, marginTop: baseLine - midPoint }]} />
+          <View
+            style={[
+              pdfStyles.bottomLine,
+              { height: 0, marginTop: rowHeight - baseLine - 0.5 },
+            ]}
+          />
+          {/* Overlay trace text */}
+          <Text
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              fontSize: pdfFontSize,
+              color: `rgba(100,100,100,${traceOpacity})`,
+              letterSpacing: 3,
+              lineHeight: rowHeight / pdfFontSize,
+              fontFamily: fontFamily || 'Helvetica',
+            }}
+          >
+            {traceText}
+          </Text>
+        </View>
+      )}
+
+      {/* Practice rows */}
       {Array.from({ length: lines }).map((_, i) => (
         <View key={i} style={{ height: rowHeight }}>
           <View style={[pdfStyles.topLine, { height: 0 }]} />

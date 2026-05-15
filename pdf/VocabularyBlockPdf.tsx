@@ -13,7 +13,9 @@ type Props = {
 }
 
 export function VocabularyBlockPdf({ vocabulary: vocab, settings: s, index, lines }: Props) {
-  const fs = s.fontScale
+  const fs = s.fontSize
+  // PDF uses pt-scale: convert px to approximate pt (0.75 ratio)
+  const pdfFs = fs * 0.75
   const traceText = Array(Math.ceil(50 / (vocab.word.length + 3)))
     .fill(vocab.word)
     .join('   ')
@@ -23,33 +25,33 @@ export function VocabularyBlockPdf({ vocabulary: vocab, settings: s, index, line
       {/* Header */}
       <View style={pdfStyles.header}>
         <View style={pdfStyles.wordArea}>
-          <Text style={[pdfStyles.word, { fontSize: Math.round(13 * fs), ...getBoldFontStyle(s.fontFamily) }]}>
+          <Text style={[pdfStyles.word, { fontSize: Math.round(pdfFs * 0.8125), ...getBoldFontStyle(s.fontFamily) }]}>
             {index}. {vocab.word}
           </Text>
           {s.showReading && vocab.reading && (
-            <Text style={[pdfStyles.reading, { fontSize: Math.round(9 * fs) }]}>
+            <Text style={[pdfStyles.reading, { fontSize: Math.round(pdfFs * 0.5625) }]}>
               /{vocab.reading}/
             </Text>
           )}
           {s.showPartOfSpeech && vocab.pos && (
-            <Text style={[pdfStyles.pos, { fontSize: Math.round(9 * fs) }]}>
+            <Text style={[pdfStyles.pos, { fontSize: Math.round(pdfFs * 0.5625) }]}>
               ({vocab.pos})
             </Text>
           )}
         </View>
         <View style={pdfStyles.meaningArea}>
           {s.showMeaningEn && vocab.meaningEn && (
-            <Text style={[pdfStyles.meaningEn, { fontSize: Math.round(9 * fs) }]}>
+            <Text style={[pdfStyles.meaningEn, { fontSize: Math.round(pdfFs * 0.5625) }]}>
               {vocab.meaningEn}
             </Text>
           )}
           {s.showJapanese && vocab.japanese && (
-            <Text style={[pdfStyles.jaText, { fontSize: Math.round(9 * fs) }]}>
+            <Text style={[pdfStyles.jaText, { fontSize: Math.round(pdfFs * 0.5625) }]}>
               {vocab.japanese}
             </Text>
           )}
           {s.showVietnamese && vocab.vietnamese && (
-            <Text style={[pdfStyles.viText, { fontSize: Math.round(9 * fs) }]}>
+            <Text style={[pdfStyles.viText, { fontSize: Math.round(pdfFs * 0.5625) }]}>
               {vocab.vietnamese}
             </Text>
           )}
@@ -59,38 +61,30 @@ export function VocabularyBlockPdf({ vocabulary: vocab, settings: s, index, line
       {/* Example */}
       {s.showExample && vocab.example && (
         <View style={[pdfStyles.exampleBlock, { marginBottom: 6 }]}>
-          <Text style={[pdfStyles.exampleText, { fontSize: Math.round(8 * fs) }]}>
+          <Text style={[pdfStyles.exampleText, { fontSize: Math.round(pdfFs * 0.5) }]}>
             {vocab.example}
           </Text>
           {s.showExampleJapanese && vocab.exampleJa && (
-            <Text style={[pdfStyles.exampleTranslation, { fontSize: Math.round(8 * fs) }]}>
+            <Text style={[pdfStyles.exampleTranslation, { fontSize: Math.round(pdfFs * 0.5) }]}>
               {vocab.exampleJa}
             </Text>
           )}
           {s.showExampleVietnamese && vocab.exampleVi && (
-            <Text style={[pdfStyles.exampleTranslation, { fontSize: Math.round(8 * fs) }]}>
+            <Text style={[pdfStyles.exampleTranslation, { fontSize: Math.round(pdfFs * 0.5) }]}>
               {vocab.exampleVi}
             </Text>
           )}
         </View>
       )}
 
-      {/* Trace */}
-      <Text
-        style={[
-          pdfStyles.traceText,
-          {
-            fontSize: Math.round(11 * fs),
-            color: `rgba(100,100,100,${s.traceOpacity})`,
-            marginBottom: 4,
-          },
-        ]}
-  >
-        {traceText}
-      </Text>
-
-      {/* Writing grid */}
-      <WritingGridPdf lines={lines} fontScale={fs} />
+      {/* Writing grid with integrated trace text */}
+      <WritingGridPdf
+        lines={lines}
+        fontSize={fs}
+        traceText={traceText}
+        traceOpacity={s.traceOpacity}
+        fontFamily={s.fontFamily}
+      />
 
       {/* Recall */}
       {s.showRecall && (vocab.japanese || vocab.vietnamese) && (
@@ -102,7 +96,7 @@ export function VocabularyBlockPdf({ vocabulary: vocab, settings: s, index, line
               ? `${vocab.vietnamese} →`
               : '→'}
           </Text>
-          <View style={[pdfStyles.recallLine, { height: Math.round(18 * fs) }]} />
+          <View style={[pdfStyles.recallLine, { height: Math.round(pdfFs * 1.125) }]} />
         </View>
       )}
     </View>

@@ -55,6 +55,6 @@ export const WorksheetSettingsSchema = z.object({
   showRecall: z.boolean(),
   showReading: z.boolean().optional(),
   showMeaningEn: z.boolean().optional(),
-  fontScale: z.number().min(0.5).max(2),
+  fontSize: z.number().int().min(8).max(24),
   fontFamily: z.string().optional(),
 })
